@@ -214,7 +214,22 @@ Solving situations of misunderstanding requires two abilities: to build a cohere
 
 \section{Introduction}
 
-\section{Mutual modelling}
+\section{Mutual modeling}
+
+\subsection{Non-recursive approach}
+
+Many ToM-based architecture have been developed in order to study multi-agent behaviors in social games. But so far, most of these applications where limited to first order of modeling (agents does not take into account how they are modeled by others) while higher orders leads to better performances in a range of simple social games (cite ). However, 2nd order (an agent has a model of itself viewed by others) seams sufficient to generate rich social behaviors (cite david). Higher orders (an agent has a model of its own theory of mind imagined by other agents), although they outperform 2nd order in some cases (especially fourth cite Mod) do not seams to bring important advantages (cite nego). \\
+We introduce a cognitive architecture enabling second order of modeling. In contrast with previous approaches (cite all highers), this one is not recursive. In recursive modeling (cite rigorous), an agent re-use its own architecture (that allows theory of mind) to model other agents. This would lead to an infinite loop of mutual modeling, known as infinite regress in epistemic logic (clark). In mutli-agent framework, recursions need to be stopped at a given depth. Such approaches have limits: it is difficult to process in parallel reasoning of all agents, it becomes heavy in computation beyond second order of modeling, and different agents or their images (perceived by others) may have different reasoning and may adopt different behaviors facing similar observations.\\
+In our non-recursive approach, one agent has three models: a model of itself, a model of others and a model of itself seen by others. None of these models are performing theory of mind. At any instant, the agent updates its three models given his observations and use them to make predictions and decisions.\\
+
+\subsection{Model of itself}
+
+An agent $i$ models itself as a RL agent: at a time $t$, it chooses an action $a^t_i$. Depending on this decision and all other agent's decisions $\{a^t_j\}_{j \neq i}$, it receives an observation $o^t_i = O(a^t_1, a^t_2, .. a^t_n)$ ($n$ being the number of agents) and a reward that only depend on this observation $r^t_i = R_i(o^t)$. Each agent has its own reward function that is unknown by other agents.\\
+
+\subsection{Model of others and itself seen by others}
+
+At the same time, it receives observations of other agents ${o^t_j}$, 
+
 
 \section{Expressing intentions}
 
@@ -226,7 +241,7 @@ Solving situations of misunderstanding requires two abilities: to build a cohere
 
 
 \bibliographystyle{abbrv}
-\bibliography{sigproc}  
+\bibliography{biblio}  
 % sigproc.bib is the name of the Bibliography in this case
 % You must have a proper ".bib" file
 %  and remember to run:
