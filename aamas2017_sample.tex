@@ -185,7 +185,7 @@
 \maketitle
 
 \begin{abstract}
-Solving situations of misunderstanding requires two abilities: to build a coherent model of others in order to understand them, and to build a model of "me" perceived by others in order to be understood. Having an image of me seen by others requires two recursive orders of modeling, known in psychology as first and second orders of theory of mind.  It becomes especially difficult to find an understanding when agents don’t have a common language to communicate and have to learn and share each other’s intentions through their behaviors. In this paper, we present a cognitive architecture based on both Reinforcement Learning and Inverse Reinforcement Learning that aims to reach mutual understanding in multi-agent scenarios. We study different conditions of empathy that lead to cooperation in prisoner's dilemma.
+Solving situations of misunderstanding requires two abilities: to build a coherent model of others in order to understand them, and to build a model of "me" perceived by others in order to be understood. Having an image of me seen by others requires two recursive orders of modeling, known in psychology as first and second orders of theory of mind.  It becomes especially difficult to find an understanding when agents don’t have a common language to communicate and have to learn and share each other’s intentions through their behaviors. In this paper, we present a cognitive architecture based on both Reinforcement Learning and Inverse Reinforcement Learning that aims to reach mutual understanding in multi-agent scenarios. We study different conditions of empathy or gratitude that lead to cooperation in prisoner's dilemma.
 \end{abstract}
 
 % Note that the category section should be completed after reference to the ACM Computing Classification Scheme available at
@@ -228,7 +228,7 @@ In our non-recursive approach, one agent has three models: a model of itself, a 
 
 An agent $i$ models itself as a RL agent: at a time $t$, it chooses an action $a^t_i$. Depending on this decision and all other agent's decisions $\{a^t_j\}_{j \neq i}$, it receives an observation $o^t_i = O(a^t_1, a^t_2, .. a^t_n)$ ($n$ being the number of agents) and a reward that only depend on this observation $r^t_i = R_i(o^t)$. Each agent has its own reward function that is unknown by other agents.
 
-As in (ref sequira14), this framework is simplified by the agent as a Markovian Decision Process (ref) (MDP) where the observations are assumed to be states that just depend on its previous observation and action following an unknown probability distribution:
+As in (ref sequira14), this framework is simplified by the agent as a \textit{Markovian Decision Process} (ref) (MDP) where the observations are assumed to be states that just depend on its previous observation and action following an unknown probability distribution:
 $$o^t_i = O(a^t_1, a^t_2, .. a^t_n) \sim P(o^t_i|a^t_i,o^{t-1}_i)$$
 Hence, at the beginning, the decision making of the agent is performed by Q-learning (ref). Given the observation $o^t$, the agent learns the best new action $a^{t+1}$ in order to maximize its future rewards (ref to algo 1).\\
 \\
@@ -254,7 +254,7 @@ algo 2: intuitive IRL\\
 
 \subsection{Model of itself seen by others}
 
-In order to model itself perceived by other agents, an agent processes exactly the same way used to model other agents. Thus, it infers its own reward function $R_i$ given its previous actions and observations in order to estimate how other agents would infer its reward function. In the following sections, we denote as $\hat R_{i:(j:i)}$ this estimated function. Note that if all agent are aware of all the true observations of other agents and have the same initial estimation of others rewards (for instance, at time $t=0$, $R^0_{i:(j:i)}(o_i)=R^0_{j:i}(o_j)=0 \hspace{1mm}\forall o_j$), we have the equality:
+In order to model itself perceived by other agents, an agent processes exactly the same way used to model other agents. Thus, it infers its own reward function $R_i$ given its previous actions and observations in order to estimate how other agents would infer its reward function. In the following sections, we denote as $\hat R_{i:(j:i)}$ this estimated function. As in (ref section 2.3), agent $i$ uses its memories of its previous choices of action $A_{i:(j:i)}(o_i)$ and consequences $O_{i:(j:i)}(o_i)$ observed by another agent $j$ for all possible observations $o_i$ in order to update $\hat R_{i:(j:i)}$. Note that if all agents are aware of all the true observations of others and have the same initial estimations of others rewards (for instance, $R^0_{i:(j:i)}(o_i)=R^0_{j:i}(o_j)=0 \hspace{1mm}\forall i,j,o_i,o_j$), we then have the equality:
 
 $$\hat R^t_{i:(j:i)} = \hat R^t_{j:i} \hspace{3mm}\forall t$$
 
@@ -263,21 +263,23 @@ $$\hat R^t_{i:(j:i)} = \hat R^t_{j:i} \hspace{3mm}\forall t$$
 
 At this moment, our agents are just behaving in an ``egoist" way, trying to maximize their own rewards and optionally they model others and themselves seen by others. But in order to promote cooperation, we provide to any agent the possibility to help other agent to infer its reward function. In that purpose, an agent can, each time it has not the expected observation and reward, move next time to another action even if the last one was in average the optimal choice. In other words, imagine the agent has learned that when it sees an observation \textit{``light"} the optimal action is \textit{``press-the-button"} and leads with probability 0.5 to \textit{``glass-of-wine"} associated with positive reward ($R(\textit{wine}) = 1$) and with probability 0.5 to \textit{``electric-chock"} that is associated with negative reward ($R(\textit{chock})=-0.9$), while another action \textit{``do-nothing''} always leads to \textit{``nothing"} associated with a null reward ($R(\textit{nothing})=0$). In that case, a RL-based behavior would always chose action ``press-the-button" that leads in average to a positive reward ($\hat r = 0.1$). But another agent observing this behavior, with no additive information, would infer that both \textit{``glass-of-wine"} and \textit{``electric-chock"} are associated with positive rewards while \textit{``nothing"} is associated with negative (or null) reward. Now, if the agent, each time it receives the electric chock, do nothing the very next time it sees the light, it becomes possible for an observer to guess it does not like the chock but tried the action because it wanted the glass of wine. 
 
-We base our approach on this idea as we enable agents to help each others in inferring their reward functions. Now agents has the choice between two possible behaviors: the classical Q-learning or this expressing-intentions behavior (described step by step in ref-to-algo3).\\
+Formally, the agent is using its model of itself seen by others: TO CONTINUE
+
+That way we enable agents to help each others in inferring their reward functions. Now our agents has the choice between two possible behaviors: the classical Q-learning or this expressing-intentions behavior (described step by step in ref-to-algo3).\\
 \\
 algo 3 : expressing-intentions behavior\\
 
 \section{Empathy and gratitude}
 
-We finally provide our agents with a model of empathy and gratitude. We provide our agents with intrinsic rewards (ref intrinsic motivation) that depend on how they estimate the rewards of other agents:
+We finally provide our agents with intrinsic rewards (ref intrinsic motivation) that depend on how they estimate the rewards of other agents. We define two different intrinsic rewards that an agent can feel observing the other ones:
 
 \textbf{Empathy} $e^t_{i:j}$ of an agent $i$ observing an agent $j$ at a time $t$ is proportional to its estimation of the reward that $j$ received:
 $$e^t_{i:j} \propto \hat R_{i:j}(o^t_j)$$
 
 \textbf{Gratitude} $g^t_{i:(j:i)}$ of an agent $i$ observing an agent $j$ at a time $t$ is proportional to its estimation of \textit{how $j$ would infer $i$'s own reward}:
 $$g^t_{i:(j:i)} \propto \hat R_{i:(j:i)}(o^t_i)$$
-Our model of empathy is based on de Waal's m
-capacity to be affected by and share the emotional state of another
+
+Our model of empathy is based on de Waal's \textit{Action-Percept Model} framework (ref Waal). In this context, agents have a common set of possible actions or observations. Then empathy describes the capacity to be affected by and share the emotional state of another (inferred through this common set of action-perception). 
 
 The intrinsic reward for gratitude is based on the idea that ``\textit{it's the thought that counts}", expression used to indicate that it is the kindness behind an act that matters, however imperfect or insignificant the act may be.
 

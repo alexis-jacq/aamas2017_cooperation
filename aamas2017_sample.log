@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  11 NOV 2016 19:59
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  11 NOV 2016 22:49
  restricted \write18 enabled.
 **aamas2017_sample.tex
 (./aamas2017_sample.tex
@@ -319,23 +319,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--254
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--269
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--271
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--269
+Underfull \hbox (badness 10000) in paragraph at lines 268--271
 
  []
 
-(./aamas2017_sample.bbl) [2] (./aamas2017_sample.aux))
+[2] (./aamas2017_sample.bbl) [3
+
+] (./aamas2017_sample.aux))
 
 Here is how much of LuaTeX's memory you used:
  3094 strings out of 495004
  100000,106986 words of node,token memory allocated
- 348 words of node memory still in use:
+ 349 words of node memory still in use:
    5 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 42 glue_spec, 1 write nodes
-   avail lists: 2:20,3:133,4:1786,5:579,6:6253,7:238,9:498,10:477
+   avail lists: 2:20,3:134,4:1622,5:495,6:5481,7:238,9:493,10:443
  6388 multiletter control sequences out of 65536+600000
  103 fonts using 4055931 bytes
  41i,10n,28p,1662b,273s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -351,10 +356,10 @@ sy9.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
 e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><</usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb><</usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb>
-Output written on aamas2017_sample.pdf (2 pages, 145616 bytes).
+Output written on aamas2017_sample.pdf (3 pages, 147181 bytes).
 
-PDF statistics: 60 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+PDF statistics: 63 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
