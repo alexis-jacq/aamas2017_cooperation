@@ -231,7 +231,7 @@ In our non-recursive approach, one agent has three models: a model of itself, a 
 An agent $i$ models itself as a RL agent: at a time $t$, it chooses an action $a^t_i$. Depending on this decision and all other agent's decisions $\{a^t_j\}_{j \neq i}$, it receives an observation $o^t_i = O(a^t_1, a^t_2, .. a^t_n)$ ($n$ being the number of agents) and a reward that only depend on this observation $r^t_i = R_i(o^t)$. Each agent has its own reward function that is unknown by other agents.
 
 As in (ref sequira14), this framework is simplified by the agent as a \textit{Markovian Decision Process} (ref) (MDP) where the observations are assumed to be states that just depend on its previous observation and action following an unknown probability distribution:
-$$o^t_i = O(a^t_1, a^t_2, .. a^t_n) \sim P(o^t_i|a^t_i,o^{t-1}_i)$$
+$$o^t_i = O(a^t_1, a^t_2, .. a^t_n) \sim \mathbb{P}[o^t_i|a^t_i,o^{t-1}_i]$$
 Hence, at the beginning, the decision making of the agent is performed by Q-learning (ref). Given the observation $o^t$, the agent learns the best new action $a^{t+1}$ in order to maximize its future rewards (ref to algo 1).\\
 \\
 algo 1: QL\\
@@ -291,22 +291,57 @@ $$\mathfrak{r}^t_j = R_i(o_i) + \sum_{j\neq i} \alpha_i\,e^t_{i:j} + \beta_i\,g^
 Where $\alpha$ and $\beta$ are control parameters that are used to try different situations. For example, we can compare agents that only feel empathy ($\beta=0$) or only gratitude ($\alpha=0$). We can also explore negative values of $\alpha$ and $\beta$ that could lead to aggressive behaviors.
 
 \section{Prisoner's dilemma}
-The Prisoner's Dilemma (PD) is an ideal game to study the social behavior of our agents. In that context, we focus on a 2-agents system. Each agent has the choice between two actions \textit{defect} or \textit{cooperate}. If both agent choose to cooperate, they receive a positive reward $\mathcal{R}$. If they both defect, they receive a smaller reward $\mathcal{P}$. If one agent defect while the other cooperate, the agent that defected receives an hight positive reward $\mathcal{T}$ and the agent that cooperated receives the smallest reward $\mathcal{S}$. Table~\ref{PDmatrix} displays the payoff matrix of this game. The generalized form of the PD requires following conditions:
+The Prisoner's Dilemma (PD) is an ideal game to study the social behavior of our agents. In that context, we focus on a 2-agents system. Each agent has the choice between two actions \textit{defect} or \textit{cooperate}. If both agent choose to cooperate, they receive a reward $\mathcal{R}$. If they both defect, they receive a smaller reward $\mathcal{P}$. If one agent defect while the other cooperate, the agent that defected receives the highest reward $\mathcal{T}$ and the agent that cooperated receives the smallest reward $\mathcal{S}$. The generalized form of PD requires following conditions:
 $$\mathcal{T}>\mathcal{R}>\mathcal{P}>\mathcal{S}$$
-The payoff relationship $\mathcal{R}>\mathcal{P}$ implies that mutual cooperation is superior to mutual defection, while the payoff relationships $\mathcal{T}>\mathcal{R}$ and $\mathcal{P}>\mathcal{S}$ imply that defection is the dominant strategy for both agents.
+The payoff relationship $\mathcal{R}>\mathcal{P}$ implies that mutual cooperation is superior to mutual defection, while the payoff relationships $\mathcal{T}>\mathcal{R}$ and $\mathcal{P}>\mathcal{S}$ imply that defection is the dominant strategy for both agents. We implemented the iterated version of this game (IPD), where agents successively play this game and remember previous actions of their opponent. Classical RL-learning would always tend to the Nash equilibrium (sandholm1996multiagent) that consists in always choosing defection.
+
+We implemented an IPD with payoff $\mathcal{T}=1$, $\mathcal{R}=0.6$, $\mathcal{P}=0$, $\mathcal{S}=-1$. Table~\ref{PDmatrix} displays the payoff matrix of this game.
 \begin{table}[h]
 	\centering
-	\caption{Prisoner's Dilemma}
 	\label{PDmatrix}
 	\begin{tabular}{|c|c|c|} \hline
-		 &Cooperate&Defect\\ \hline
-		Cooperate & $\mathcal{R}$,$\mathcal{R}$ & $\mathcal{S}$,$\mathcal{T}$\\ \hline
-		Defect & $\mathcal{T}$,$\mathcal{S}$& $\mathcal{P}$,$\mathcal{P}$\\ \hline
+		&Cooperate&Defect\\ \hline
+		Cooperate & 0.6, 0.6 & -1, 1\\ \hline
+		Defect & 1, -1& 0, 0\\ \hline
 	\end{tabular}
+	\caption{Prisoner's Dilemma payoff matrix}
 \end{table} 
-We implemented the iterated version of this game (IPD), where agents successively play this game, and remember previous actions of their opponent. Classical RL-learning would always tend to the Nash equilibrium (sandholm1996multiagent) where agent are always defecting.
+Each game last 1000 iterations. At each iteration $t$, agent $i$ chooses action $a^t_i\in \{\textit{cooperate, defect}\}$ and receives a signal $o^{t}_i\in \{\mathcal{O_R, }\mathcal{O_S, }\mathcal{O_T, }\mathcal{O_P}\}$ associated with the corresponding reward ($R_i(\mathcal{O_S}) = \mathcal{S}$, etc). Agent $i$ also receive the action and the observation of the other agent, $a^t_j$ and $o^{t}_j$. But agent are not aware of the payoff matrix that defines the reward of the other (in fact, it is the same).
+
+The Q-learning behavior of agents was implemented with parameters $\gamma = 0.8$, $\eta = 0.05$ and the action was chosen using the Gibbs softmax method:
+$$a \sim \mathbb{P}[a|o] =  \frac{e^{\theta Q(o,a)}}{\sum_b e^{\theta Q(o,b)}}$$
+With temperature parameter $\theta = 5$.
 
 \section{Results and Discussion}
+
+\subsection{Pure Q-learning}
+We first tried to let our agents behave without expressing intention and with no intrinsic reward for empathy or gratitude ($\alpha = \beta = 0$). As expected, agents quickly tend to the Nash equilibrium and always defect (ref to fig1). Each agent learned a wrong reward function for the other. (ref to table 2) shows the average resulting reward functions learned by the agents over 50 IPD game with 1000 iterations. 
+\begin{table}[h]
+	\centering
+	\label{R_00_00_Q}
+	\begin{tabular}{|c|c|c|c|c|} \hline
+		&$\mathcal{T}$&$\mathcal{R}$&$\mathcal{P}$&$\mathcal{S}$\\ \hline
+		Truth & 1 & 0.6 & 0 & -1\\ \hline \hline
+		$\hat R_{1:2}$ & 0.34 &-0.13 & 0.90& -0.75\\ \hline
+		$\sigma^2$ & 0.39 & 0.52 & 0.16 & 0.13\\ \hline \hline
+		$\hat R_{2:1}$ & 0.25 &-0.16&  0.92& -0.77\\ \hline
+		$\sigma^2$ & 0.36&  0.46 & 0.15 &  0.094\\ \hline
+	\end{tabular}
+	\caption{Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null.}
+\end{table} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.9\linewidth]{00_00_Q}
+	\caption{test}
+	%\vskip -6pt
+\end{figure}
+
+\subsection{Q-learning with empathy \& gratitude}
+
+\subsection{Expressing intentions with empathy \& gratitude}
+
+\subsection{Playing with empathy}
 
 \section{Conclusion}
 
