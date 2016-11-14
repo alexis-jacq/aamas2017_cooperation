@@ -37,7 +37,7 @@
 
 \documentclass{aamas2017}
 
-\DeclareMathSizes{12}{30}{16}{12}
+\usepackage[table,usenames,dvipsnames]{xcolor}
 
 % if you are using PDF LaTeX and you cannot find a way for producing
 % letter, the following explicit settings may help
@@ -216,13 +216,15 @@ Solving situations of misunderstanding requires two abilities: to build a cohere
 
 \section{Introduction}
 
+NEED INTRO
+
 \section{Mutual modeling}
 
 \subsection{Non-recursive approach}
 
-Many ToM-based architecture have been developed in order to study multi-agent behaviors in social games. But so far, most of these applications where limited to first order of modeling (agents does not take into account how they are modeled by others) while higher orders leads to better performances in a range of simple social games (cite ). However, 2nd order (an agent has a model of itself viewed by others) seams sufficient to generate rich social behaviors (cite david). Higher orders (an agent has a model of its own theory of mind imagined by other agents), although they outperform 2nd order in some cases (especially fourth cite Mod) do not seams to bring important advantages (cite nego). 
+Many ToM-based architecture have been developed in order to study multi-agent behaviors in social games. But so far, most of these applications where limited to first order of modeling (agents does not take into account how they are modeled by others) while higher orders leads to better performances in a range of simple social games \cite{meijering2011know}\cite{de2015savvy}\cite{weerd2015negotiating}\cite{de2014agent}\cite{de2014theory}\cite{de2011advantage}. However, 2nd order (an agent has a model of itself viewed by others) seams sufficient to generate rich social behaviors \cite{pynadath2011modeling}. Higher orders (an agent has a model of its own theory of mind imagined by other agents), although they outperform 2nd order in some cases (especially fourth \cite{de2014theory}) do not seams to bring important advantages \cite{weerd2015negotiating}. 
 
-We introduce a cognitive architecture enabling second order of modeling. In contrast with previous approaches (cite all highers), this one is not recursive. In recursive modeling (cite rigorous), an agent re-use its own architecture (that allows theory of mind) to model other agents. This would lead to an infinite loop of mutual modeling, known as infinite regress in epistemic logic (clark). In mutli-agent framework, recursions need to be stopped at a given depth. Such approaches have limits: it is difficult to process in parallel reasoning of all agents, it becomes heavy in computation beyond second order of modeling, and different agents or their images (perceived by others) may have different reasoning and may adopt different behaviors facing similar observations.
+We introduce a cognitive architecture enabling second order of modeling. In contrast with previous approaches \cite{meijering2011know}\cite{de2014agent}\cite{pynadath2011modeling}, this one is not recursive. In recursive modeling, an agent re-use its own architecture (that allows theory of mind) to model other agents \cite{gmytrasiewicz1995rigorous}. In multi-agent framework, recursions need to be stopped at a given depth. Otherwise it would lead to an infinite loop of mutual modeling, known as infinite regress in epistemic logic \cite{clark1991grounding}. Such approaches have limits: it is difficult to process in parallel reasoning of all agents, it becomes heavy in computation beyond second order of modeling, and different agents or their images (perceived by others) may have different reasoning and may adopt different behaviors facing similar observations.
 
 In our non-recursive approach, one agent has three models: a model of itself, a model of others and a model of itself seen by others. None of these models are performing theory of mind. At any instant, the agent updates its three models given his observations and use them to make predictions and decisions.\\
 
@@ -230,15 +232,15 @@ In our non-recursive approach, one agent has three models: a model of itself, a 
 
 An agent $i$ models itself as a RL agent: at a time $t$, it chooses an action $a^t_i$. Depending on this decision and all other agent's decisions $\{a^t_j\}_{j \neq i}$, it receives an observation $o^t_i = O(a^t_1, a^t_2, .. a^t_n)$ ($n$ being the number of agents) and a reward that only depend on this observation $r^t_i = R_i(o^t)$. Each agent has its own reward function that is unknown by other agents.
 
-As in (ref sequira14), this framework is simplified by the agent as a \textit{Markovian Decision Process} (ref) (MDP) where the observations are assumed to be states that just depend on its previous observation and action following an unknown probability distribution:
+As in \cite{sequeira14}, this framework is simplified by the agent as a \textit{Markovian Decision Process} (MDP) \cite{puterman1994} where the observations are assumed to be states that just depend on its previous observation and action following an unknown probability distribution:
 $$o^t_i = O(a^t_1, a^t_2, .. a^t_n) \sim \mathbb{P}[o^t_i|a^t_i,o^{t-1}_i]$$
-Hence, at the beginning, the decision making of the agent is performed by Q-learning (ref). Given the observation $o^t$, the agent learns the best new action $a^{t+1}$ in order to maximize its future rewards (ref to algo 1).\\
+Hence, at the beginning, the decision making of the agent is performed by Q-learning \cite{watkins1992q}. Given the observation $o^t$, the agent learns the best new action $a^{t+1}$ in order to maximize its future rewards (ref to algo 1).\\
 \\
 algo 1: QL\\
 
 \subsection{Model of others}
 
-At the same time, it receives actions and observations of other agents $\{a^t_j\}_{j \neq i}$ and $\{o^t_j\}_{j \neq i}$. Given this information, it can infer their reward functions $\{R_j\}_{j \neq i}$ by IRL. It this setup, the IRL must be performed on-line. In (ref onlineIRL), Jin and \textit{al} provide an incremental algorithm for on-line IRL in a MDP framework. This method is efficient but not so intuitive. As our final goal is to develop agents that could interact with humans, we want to adopt a less efficient but more intuitive approach that looks like how any human (or even a child) would infer the intentions of others. And maybe the simplest way is the following:
+At the same time, it receives actions and observations of other agents $\{a^t_j\}_{j \neq i}$ and $\{o^t_j\}_{j \neq i}$. Given this information, it can infer their reward functions $\{R_j\}_{j \neq i}$ by \textit{Inverse Reinforcement Learning} (IRL) \cite{ng2000algorithms}. It this setup, the IRL must be performed on-line. In \cite{jin2011convergence} they provide an incremental algorithm for on-line IRL in a MDP framework. This method is efficient but not so intuitive. As our final goal is to develop agents that could interact with humans, we want to adopt a less efficient but more intuitive approach that looks like how any human (or even a child) would infer the intentions of others. And maybe the simplest way is the following:
 
 \textit{If I liked I repeat, otherwise I change:} Supposing agent $j$ receives an observation \textit{``light"} and chooses action \textit{``press-the-button"}. Then it receives new observation \textit{``glass-of-juice"}. If it liked the juice, probably the next time it will observe the signal \textit{``light"} it would again choose action \textit{``press-the-button"}. Otherwise it would choose another possible action.
 
@@ -281,7 +283,7 @@ $$e^t_{i:j} \propto \hat R_{i:j}(o^t_j)$$
 \textbf{Gratitude} $g^t_{i:(j:i)}$ of an agent $i$ observing an agent $j$ at a time $t$ is proportional to its estimation of \textit{how $j$ would infer $i$'s own reward}:
 $$g^t_{i:(j:i)} \propto \hat R_{i:(j:i)}(o^t_i)$$
 
-Our model of empathy is based on de Waal's \textit{Action-Percept Model} framework (ref Waal). In this context, agents have a common set of possible actions or observations. Then empathy describes the capacity to be affected by and share the emotional state of another (inferred through this common set of action-perception). 
+Our model of empathy is based on de Waal's \textit{Action-Percept Model} framework \cite{de2008putting}. In this context, agents have a common set of possible actions or observations. Then empathy describes the capacity to be affected by and share the emotional state of another (inferred through this common set of action-perception). 
 
 The intrinsic reward for gratitude is based on the idea that ``\textit{it's the thought that counts}", expression used to indicate that it is the kindness behind an act that matters, however imperfect or insignificant the act may be.
 
@@ -293,7 +295,7 @@ Where $\alpha$ and $\beta$ are control parameters that are used to try different
 \section{Prisoner's dilemma}
 The Prisoner's Dilemma (PD) is an ideal game to study the social behavior of our agents. In that context, we focus on a 2-agents system. Each agent has the choice between two actions \textit{defect} or \textit{cooperate}. If both agent choose to cooperate, they receive a reward $\mathcal{R}$. If they both defect, they receive a smaller reward $\mathcal{P}$. If one agent defect while the other cooperate, the agent that defected receives the highest reward $\mathcal{T}$ and the agent that cooperated receives the smallest reward $\mathcal{S}$. The generalized form of PD requires following conditions:
 $$\mathcal{T}>\mathcal{R}>\mathcal{P}>\mathcal{S}$$
-The payoff relationship $\mathcal{R}>\mathcal{P}$ implies that mutual cooperation is superior to mutual defection, while the payoff relationships $\mathcal{T}>\mathcal{R}$ and $\mathcal{P}>\mathcal{S}$ imply that defection is the dominant strategy for both agents. We implemented the iterated version of this game (IPD), where agents successively play this game and remember previous actions of their opponent. Classical RL-learning would always tend to the Nash equilibrium (sandholm1996multiagent) that consists in always choosing defection.
+The payoff relationship $\mathcal{R}>\mathcal{P}$ implies that mutual cooperation is superior to mutual defection, while the payoff relationships $\mathcal{T}>\mathcal{R}$ and $\mathcal{P}>\mathcal{S}$ imply that defection is the dominant strategy for both agents. We implemented the iterated version of this game (IPD), where agents successively play this game and remember previous actions of their opponent. Classical RL-learning would always tend to the Nash equilibrium \cite{sandholm1996multiagent} that consists in always choosing defection.
 
 We implemented an IPD with payoff $\mathcal{T}=1$, $\mathcal{R}=0.6$, $\mathcal{P}=0$, $\mathcal{S}=-1$. Table~\ref{PDmatrix} displays the payoff matrix of this game.
 \begin{table}[h]
@@ -315,31 +317,31 @@ With temperature parameter $\theta = 5$.
 \section{Results and Discussion}
 
 \subsection{Pure Q-learning}
-We first tried to let our agents behave without expressing intention and with no intrinsic reward for empathy or gratitude ($\alpha = \beta = 0$). As expected, agents quickly tend to the Nash equilibrium and always defect (ref to fig1). Each agent learned a wrong reward function for the other. (ref to table 2) shows the average resulting reward functions learned by the agents over 50 IPD game with 1000 iterations. 
+We first tried to let our agents behave without expressing intention and with no intrinsic reward for empathy or gratitude ($\alpha = \beta = 0$). As expected, agents quickly tend to the Nash equilibrium and always defect (ref to fig1). Each agent learned a wrong reward function for the other. (ref to table 2) shows the average resulting reward functions learned by the agents over 50 IPD game with 1000 iterations. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null.
 \begin{table}[h]
 	\centering
 	\label{R_00_00_Q}
 	\begin{tabular}{|c|c|c|c|c|} \hline
 		&$\mathcal{T}$&$\mathcal{R}$&$\mathcal{P}$&$\mathcal{S}$\\ \hline
-		Truth & 1 & 0.6 & 0 & -1\\ \hline \hline
-		$\hat R_{1:2}$ & 0.34 &-0.13 & 0.90& -0.75\\ \hline
-		$\sigma^2$ & 0.39 & 0.52 & 0.16 & 0.13\\ \hline \hline
-		$\hat R_{2:1}$ & 0.25 &-0.16&  0.92& -0.77\\ \hline
-		$\sigma^2$ & 0.36&  0.46 & 0.15 &  0.094\\ \hline
+		Truth & 1 & 0.6 & \cellcolor{yellow!30}0 & -1\\ \hline \hline
+		$\hat R_{1:2}$ & 0.34 &-0.13 & \cellcolor{yellow!30}0.90& -0.75\\ \hline
+		$\sigma^2$ & 0.39 & 0.52 & \cellcolor{yellow!30}0.16 & 0.13\\ \hline \hline
+		$\hat R_{2:1}$ & 0.25 &-0.16&  \cellcolor{yellow!30}0.92& -0.77\\ \hline
+		$\sigma^2$ & 0.36&  0.46 & \cellcolor{yellow!30}0.15 &  0.094\\ \hline
 	\end{tabular}
-	\caption{Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null.}
+	\caption{\textcolor{red}{$\alpha=0$, $\beta=0$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null (see yellow cells).}
 \end{table} 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{00_00_Q}
-	\caption{$\alpha=0.$, $\beta = 0.$}
+	\caption{\textcolor{red}{$\alpha=0$, $\beta=0$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}
 	%\vskip -6pt
 \end{figure}
 
 \subsection{Q-learning with empathy \& gratitude}
 
-empathy vs empathy
+\textbf{Gentle vs gentle}: Here we look at the behavior of agents where both receive positive intrinsic reward for empathy and gratitude ($\alpha=0.9$, $\beta=0.3$). Paradoxically, it sped up the Nash equilibrium's attraction (ref to fig2). As in pure Q-learning situation, both agents learned a false reward function where $\mathcal{P}$ is hight for the other (ref to table3). Thus, they were intrinsically rewarded by empathy while they where defecting.
 
 \begin{table}[h]
 	\centering
@@ -363,7 +365,8 @@ empathy vs empathy
 \end{figure}
 
 
-agressive vs agressive
+\textbf{Agressive vs agressive}: This time we looked at the opposite situation, where both agent were intrinsically punished by empathy or gratitude ($\alpha= -0.9$, $\beta= -0.3$).
+TO CONTINUE
 
 \begin{table}[h]
 	\centering
@@ -421,7 +424,7 @@ Only Gratitude
 		$\hat R_{1:2}$ &  0.58& -0.068 &  0.99 &-0.68\\ \hline
 		$\sigma^2$ &  5.3e-02 &  6.9e-02 &  3.9e-07 &  3.9e-02\\ \hline \hline
 		$\hat R_{2:1}$ & 0.58 &-0.064 & 0.99& -0.66\\ \hline
-		$\sigma^2$ &  0.034 & 0.095 & 0.00085  & 0.034\\ \hline
+		$\sigma^2$ &  0.034 & 0.095 & 8.5e-4  & 0.034\\ \hline
 	\end{tabular}
 	\caption{$\alpha=0.9$, $\beta = 0$, expressing intentions}
 \end{table}
@@ -435,10 +438,20 @@ Only Gratitude
 \end{figure}
 
 Both (99-99-B, 0.9/0.3)
-[ 0.6239157   1.         -0.95383566 -0.70253921]
-[  7.01253262e-02   1.86829399e-17   1.46070675e-02   8.63433705e-02]
-[ 0.55245183  1.         -0.93879563 -0.77266487]
-[  7.76399577e-02   1.52795939e-17   2.22235975e-02   7.49115150e-02]
+
+\begin{table}[h]
+	\centering
+	\label{R_90_90_B}
+	\begin{tabular}{|c|c|c|c|c|} \hline
+		&$\mathcal{T}$&$\mathcal{R}$&$\mathcal{P}$&$\mathcal{S}$\\ \hline
+		Truth & 1 & 0.6 & 0 & -1\\ \hline \hline
+		$\hat R_{1:2}$ & 0.62 &  1.   &      -0.95& -0.7\\ \hline
+		$\sigma^2$ &  7.0e-02  & 1.8e-17 &  1.4e-02 &  8.6e-02\\ \hline \hline
+		$\hat R_{2:1}$ &0.55 & 1.    &     -0.933 &-0.77\\ \hline
+		$\sigma^2$ &  7.7e-02 &  1.9e-17  & 2.2e-02  & 7.4e-02\\ \hline
+	\end{tabular}
+	\caption{$\alpha=0.9$, $\beta = 0$, expressing intentions}
+\end{table}
 
 \begin{figure}[h]
 	\centering
@@ -450,8 +463,16 @@ Both (99-99-B, 0.9/0.3)
 
 \subsection{Playing with empathy}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.9\linewidth]{alphamap}
+	\caption{$\alpha$ varying}
+	%\vskip -6pt
+\end{figure}
+
 \section{Conclusion}
 
+NEED CONCLUSION
 
 \bibliographystyle{abbrv}
 \bibliography{biblio}  

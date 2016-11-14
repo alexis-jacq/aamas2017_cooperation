@@ -1,3 +1,96 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{clark1991grounding}
+H.~H. Clark and S.~E. Brennan.
+\newblock Grounding in communication.
+\newblock {\em Perspectives on socially shared cognition}, 13(1991):127--149,
+  1991.
+
+\bibitem{de2008putting}
+F.~B. De~Waal.
+\newblock Putting the altruism back into altruism: the evolution of empathy.
+\newblock {\em Annu. Rev. Psychol.}, 59:279--300, 2008.
+
+\bibitem{de2015savvy}
+H.~de~Weerd, E.~Broers, and R.~Verbrugge.
+\newblock Savvy software agents can encourage the use of second-order theory of
+  mind by negotiators.
+\newblock In {\em Proceedings of the 37th Annual Meeting of the Cognitive
+  Science Society}, pages 542--547, 2015.
+
+\bibitem{de2014agent}
+H.~de~Weerd, R.~Verbrugge, and B.~Verheij.
+\newblock Agent-based models for higher-order theory of mind.
+\newblock In {\em Advances in Social Simulation}, pages 213--224. Springer,
+  2014.
+
+\bibitem{de2014theory}
+H.~De~Weerd, R.~Verbrugge, and B.~Verheij.
+\newblock Theory of mind in the mod game: An agent-based model of strategic
+  reasoning.
+\newblock In {\em ECSI}, pages 128--136, 2014.
+
+\bibitem{de2011advantage}
+H.~De~Weerd and B.~Verheij.
+\newblock The advantage of higher-order theory of mind in the game of limited
+  bidding.
+\newblock In {\em Proc. workshop reason. about other minds, ceur workshop
+  proceedings}, volume 751, pages 149--164. Citeseer, 2011.
+
+\bibitem{gmytrasiewicz1995rigorous}
+P.~J. Gmytrasiewicz and E.~H. Durfee.
+\newblock A rigorous, operational formalization of recursive modeling.
+\newblock In {\em ICMAS}, pages 125--132, 1995.
+
+\bibitem{jin2011convergence}
+Z.-j. Jin, H.~Qian, S.-y. Chen, and M.-l. Zhu.
+\newblock Convergence analysis of an incremental approach to online inverse
+  reinforcement learning.
+\newblock {\em Journal of Zhejiang University SCIENCE C}, 12(1):17--24, 2011.
+
+\bibitem{meijering2011know}
+B.~Meijering, H.~Van~Rijn, N.~Taatgen, and R.~Verbrugge.
+\newblock I do know what you think i think: Second-order theory of mind in
+  strategic games is not that difficult.
+\newblock In {\em Proceedings of the 33rd annual conference of the cognitive
+  science society}, pages 2486--2491, 2011.
+
+\bibitem{ng2000algorithms}
+A.~Y. Ng, S.~J. Russell, et~al.
+\newblock Algorithms for inverse reinforcement learning.
+\newblock In {\em Icml}, pages 663--670, 2000.
+
+\bibitem{puterman1994}
+M.~Puterman.
+\newblock Markov decision processes.
+\newblock 1994.
+
+\bibitem{pynadath2011modeling}
+D.~V. Pynadath, M.~Si, and S.~C. Marsella.
+\newblock Modeling theory of mind and cognitive appraisal with
+  decision-theoretic agents.
+\newblock {\em Social emotions in nature and artifact: emotions in human and
+  human-computer interaction}, pages 70--87, 2011.
+
+\bibitem{sandholm1996multiagent}
+T.~W. Sandholm and R.~H. Crites.
+\newblock Multiagent reinforcement learning in the iterated prisoner's dilemma.
+\newblock {\em Biosystems}, 37(1):147--166, 1996.
+
+\bibitem{sequeira14}
+P.~Sequeira, F.~S. Melo, and A.~Paiva.
+\newblock The influence of social display in competitive multiagent learning.
+\newblock pages 64--69, 2014.
+
+\bibitem{watkins1992q}
+C.~J. Watkins and P.~Dayan.
+\newblock Q-learning.
+\newblock {\em Machine learning}, 8(3-4):279--292, 1992.
+
+\bibitem{weerd2015negotiating}
+H.~Weerd, R.~Verbrugge, and B.~Verheij.
+\newblock Negotiating with other minds: the role of recursive theory of mind in
+  negotiation with incomplete information.
+\newblock {\em Autonomous Agents and Multi-Agent Systems}, pages 1--38, 2015.
 
 \end{thebibliography}
