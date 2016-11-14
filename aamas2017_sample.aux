@@ -1,4 +1,10 @@
 \relax 
+\citation{clark1996using}
+\citation{palagi2008sharing}
+\citation{knoblich2008evolving}
+\citation{haroush2015neuronal}
+\citation{baron1985does}
+\citation{lemaignan2015mutual}
 \citation{meijering2011know}
 \citation{de2015savvy}
 \citation{weerd2015negotiating}
@@ -13,64 +19,85 @@
 \citation{pynadath2011modeling}
 \citation{gmytrasiewicz1995rigorous}
 \citation{clark1991grounding}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Mutual modeling}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Non-recursive approach}{\thepage }}
 \citation{sequeira14}
 \citation{puterman1994}
 \citation{watkins1992q}
 \citation{ng2000algorithms}
 \citation{jin2011convergence}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Mutual modeling}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Non-recursive approach}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Model of itself}{\thepage }}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Q-learning. \textit  {TD} stands for \textit  {Temporal Difference}.}}{\thepage }}
+\newlabel{algo1}{{1}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Model of others}{\thepage }}
-\citation{de2008putting}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Intuitive on-line IRL. Agent $i$ is inferring the reward function of agent $j$.}}{\thepage }}
+\newlabel{algo2}{{2}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Model of itself seen by others}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Expressing intentions}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Empathy and gratitude}{\thepage }}
+\citation{de2008putting}
 \citation{sandholm1996multiagent}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Expressing intentions}{\thepage }}
+\newlabel{3}{{3}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Empathy and gratitude}{\thepage }}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Intuitive on-line IRL. Agent $i$ is inferring its own reward function as it could be estimated by agent $j$.}}{\thepage }}
+\newlabel{algo3}{{3}{\thepage }}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Prisoner's dilemma}{\thepage }}
 \newlabel{PDmatrix}{{5}{\thepage }}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces IPD payoff matrix}}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Results and Discussion}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Results and discussion}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Pure Q-learning}{\thepage }}
+\newlabel{61}{{6.1}{\thepage }}
 \newlabel{R_00_00_Q}{{6.1}{\thepage }}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \leavevmode {\color  {red}$\alpha =0$, $\beta =0$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal  {S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal  {P}$ that is, in fact, null (see yellow cells).}}{\thepage }}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \leavevmode {\color  {red}$\alpha =0$, $\beta =0$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Q-learning with empathy \& gratitude}{\thepage }}
+\newlabel{62}{{6.2}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \leavevmode {\color  {red}$\alpha =0$, $\beta =0$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}}{\thepage }}
+\newlabel{R_90_90_Q}{{6.2}{\thepage }}
+\newlabel{R_90_90_Q}{{6.2}{\thepage }}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \leavevmode {\color  {red}$\alpha =0.9$, $\beta =0.3$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal  {S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal  {P}$ that is, in fact, null. Furthermore, as they also learned that the other is punished while they both cooperate and receive reward $\mathcal  {R}$ (see yellow cells).}}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \leavevmode {\color  {red}$\alpha =0.9$, $\beta =0.3$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}}{\thepage }}
+\newlabel{R_m9_m9_Q}{{6.2}{\thepage }}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \leavevmode {\color  {red}$\alpha =-0.9$, $\beta = -0.3$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal  {S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal  {P}$ that is, in fact, null (see yellow cells).}}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Expressing intentions with empathy \& gratitude}{\thepage }}
+\newlabel{63}{{6.3}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \leavevmode {\color  {red}$\alpha =-0.9$, $\beta =-0.3$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}}{\thepage }}
+\newlabel{R_90_90_B}{{6.3}{\thepage }}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \leavevmode {\color  {red}$\alpha =0.9$, $\beta = 0$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. Agents could learn each other's intentions and understood that $\mathcal  {T}$ and $\mathcal  {R}$ are positive rewards for the other. As they finally always cooperated (because of empathy), they estimated other's rewards higher for $\mathcal  {R}$ than for $\mathcal  {T}$(see yellow cells).}}{\thepage }}
 \bibstyle{abbrv}
 \bibdata{biblio}
-\bibcite{clark1991grounding}{1}
-\bibcite{de2008putting}{2}
-\bibcite{de2015savvy}{3}
-\bibcite{de2014agent}{4}
-\bibcite{de2014theory}{5}
-\bibcite{de2011advantage}{6}
-\bibcite{gmytrasiewicz1995rigorous}{7}
-\bibcite{jin2011convergence}{8}
-\bibcite{meijering2011know}{9}
-\newlabel{R_90_90_Q}{{6.2}{\thepage }}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces $\alpha =0.9$, $\beta = 0.3$}}{\thepage }}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces $\alpha =0.9$, $\beta = 0.3$}}{\thepage }}
-\newlabel{R_90_90_Q}{{6.2}{\thepage }}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces $\alpha =-0.9$, $\beta = -0.3$}}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Expressing intentions with empathy \& gratitude}{\thepage }}
+\bibcite{baron1985does}{1}
+\bibcite{clark1996using}{2}
+\bibcite{clark1991grounding}{3}
+\newlabel{90_90_B}{{6.3}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \leavevmode {\color  {red}$\alpha =0.9$, $\beta =0$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior.}}{\thepage }}
+\newlabel{R_09_09_B}{{6.3}{\thepage }}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \leavevmode {\color  {red}$\alpha =0$, $\beta = 0.9$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal  {S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal  {P}$ that is, in fact, null (see yellow cells)}}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Playing with empathy}{\thepage }}
+\newlabel{09_09_B}{{6.3}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \leavevmode {\color  {red}$\alpha =0$, $\beta =0.9$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior.}}{\thepage }}
+\newlabel{R_99_99_B}{{6.3}{\thepage }}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \leavevmode {\color  {red}$\alpha =0.9$, $\beta = 0.3$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. Agents could learn each other's intentions and understood that $\mathcal  {T}$ and $\mathcal  {R}$ are positive rewards for the other. As they finally always cooperated (because of empathy), they estimated other's rewards higher for $\mathcal  {R}$ than for $\mathcal  {T}$(see yellow cells).}}{\thepage }}
 \@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{\thepage }}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces $\alpha =-0.9$, $\beta = -0.3$}}{\thepage }}
-\newlabel{R_90_90_B}{{6.3}{\thepage }}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces $\alpha =0.9$, $\beta = 0$, expressing intentions}}{\thepage }}
-\bibcite{ng2000algorithms}{10}
-\bibcite{puterman1994}{11}
-\bibcite{pynadath2011modeling}{12}
-\bibcite{sandholm1996multiagent}{13}
-\bibcite{sequeira14}{14}
-\bibcite{watkins1992q}{15}
-\bibcite{weerd2015negotiating}{16}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces $\alpha =0.9$, $\beta = 0$, expressing intentions}}{\thepage }}
-\newlabel{R_90_90_B}{{6.3}{\thepage }}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces $\alpha =0.9$, $\beta = 0$, expressing intentions}}{\thepage }}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces $\alpha =0.$, $\beta = 0.9$, expressing intentions}}{\thepage }}
-\newlabel{R_90_90_B}{{6.3}{\thepage }}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces $\alpha =0.9$, $\beta = 0$, expressing intentions}}{\thepage }}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces $\alpha =0.9$, $\beta = 0.3$, expressing intentions}}{\thepage }}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces $\alpha $ varying}}{\thepage }}
+\bibcite{de2008putting}{4}
+\bibcite{de2015savvy}{5}
+\bibcite{de2014agent}{6}
+\bibcite{de2014theory}{7}
+\bibcite{de2011advantage}{8}
+\bibcite{gmytrasiewicz1995rigorous}{9}
+\bibcite{haroush2015neuronal}{10}
+\bibcite{jin2011convergence}{11}
+\bibcite{knoblich2008evolving}{12}
+\bibcite{lemaignan2015mutual}{13}
+\bibcite{meijering2011know}{14}
+\bibcite{ng2000algorithms}{15}
+\bibcite{palagi2008sharing}{16}
+\bibcite{puterman1994}{17}
+\bibcite{pynadath2011modeling}{18}
+\bibcite{sandholm1996multiagent}{19}
+\bibcite{sequeira14}{20}
+\bibcite{watkins1992q}{21}
+\bibcite{weerd2015negotiating}{22}
+\newlabel{99_99_B}{{6.3}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \leavevmode {\color  {red}$\alpha =0.9$, $\beta =0.3$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior.}}{\thepage }}
+\newlabel{alphamap}{{6.4}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Average final defect-cooperate ratio over 10 IDP games for a grid of 400 possible ($\alpha _1$, $\alpha _2$) combinations. In each game, agents were following expressing-intention behavior between time $t=301$ and $t=700$. Red areas correspond to combinations that led to cooperation while blue areas correspond to combinations that led to Nash equilibrium. In green areas, agents where equally defecting and cooperating.}}{\thepage }}

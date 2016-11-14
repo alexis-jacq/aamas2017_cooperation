@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  14 NOV 2016 00:41
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  14 NOV 2016 19:11
  restricted \write18 enabled.
 **aamas2017_sample.tex
 (./aamas2017_sample.tex
@@ -227,43 +227,92 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
 ))
-(./aamas2017_sample.aux
+(./algorithm2e.sty
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count109
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip47
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+********************************************************
+Package `algorithm2e' Release 5.1 -- october 19 2015 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
+********************************************************
+\skiptotal=\skip48
+\skiplinenumber=\skip49
+\skiprule=\skip50
+\skiphlne=\skip51
+\skiptext=\skip52
+\skiplength=\skip53
+\algomargin=\skip54
+\skipalgocfslide=\skip55
+\algowidth=\dimen125
+\inoutsize=\dimen126
+\inoutindent=\dimen127
+\interspacetitleruled=\dimen128
+\interspacealgoruled=\dimen129
+\interspacetitleboxruled=\dimen130
+\algocf@ruledwidth=\skip56
+\algocf@inoutbox=\box30
+\algocf@inputbox=\box31
+\AlCapSkip=\skip57
+\AlCapHSkip=\skip58
+\algoskipindent=\skip59
+\algocf@nlbox=\box32
+\algocf@hangingbox=\box33
+\algocf@untilbox=\box34
+\algocf@skipuntil=\skip60
+\algocf@capbox=\box35
+\algoheightruledefault=\skip61
+\algoheightrule=\skip62
+\algotitleheightruledefault=\skip63
+\algotitleheightrule=\skip64
+\c@algocfline=\count110
+\c@algocfproc=\count111
+\c@algocf=\count112
+\algocf@algoframe=\box36
+\algocf@algobox=\box37
+) (./aamas2017_sample.aux
 
 LaTeX Warning: Label `R_90_90_Q' multiply defined.
-
-
-LaTeX Warning: Label `R_90_90_B' multiply defined.
-
-
-LaTeX Warning: Label `R_90_90_B' multiply defined.
 
 )
 \openout1 = aamas2017_sample.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count109
-\scratchdimen=\dimen125
-\scratchbox=\box30
-\nofMPsegments=\count110
-\nofMParguments=\count111
+\scratchcounter=\count113
+\scratchdimen=\dimen131
+\scratchbox=\box38
+\nofMPsegments=\count114
+\nofMParguments=\count115
 \everyMPshowfont=\toks41
-\MPscratchCnt=\count112
-\MPscratchDim=\dimen126
-\MPnumerator=\count113
-\makeMPintoPDFobject=\count114
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen132
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
 \everyMPtoPDFconversion=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO)
@@ -313,47 +362,43 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 187.
+LaTeX Font Info:    Try loading font information for U+msa on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 187.
+LaTeX Font Info:    Try loading font information for U+msb on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 187.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 187.
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ae/omsaer.fd
 File: omsaer.fd 1999/12/27
 )
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
 
 Excluding 'CCSXML' comment.
-Overfull \hbox (11.35574pt too wide) in paragraph at lines 227--228
-\T1/aer/m/n/9 der of mod-el-ing. In con-trast with pre-vi-ous ap-proaches [9][4
-][12],
+Overfull \hbox (1.6993pt too wide) in paragraph at lines 230--231
+\T1/aer/m/n/9 for-mances in a range of sim-ple so-cial games [14][5][22][6][7][
+8].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
-
+Overfull \hbox (15.97267pt too wide) in paragraph at lines 232--233
+\T1/aer/m/n/9 der of mod-el-ing. In con-trast with pre-vi-ous ap-proaches [14][
+6][18],
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--240
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
@@ -362,30 +407,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 236--240
 
 Missing character: There is no ’ (U+2019) in font aer9!
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 253--256
-
+Overfull \hbox (0.79999pt too wide) detected at line 255
+|[]|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--256
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--275
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--275
-
+Overfull \hbox (0.79999pt too wide) detected at line 293
+|[]|
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for U+euf on input line 290.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+Overfull \hbox (0.79999pt too wide) detected at line 335
+|[]|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--336
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 351.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
+) [3]
 Package epstopdf Info: Source file: <00_00_Q.eps>
 (epstopdf)                    date: 2016-11-13 11:20:18
 (epstopdf)                    size: 35265 bytes
@@ -394,16 +441,19 @@ Package epstopdf Info: Source file: <00_00_Q.eps>
 (epstopdf)                    size: 15815 bytes
 (epstopdf)             Command: <repstopdf --outfile=00_00_Q-eps-converted-to.pd
 f 00_00_Q.eps>
-(epstopdf)             \includegraphics on input line 337.
+(epstopdf)             \includegraphics on input line 398.
 Package epstopdf Info: Output file is already uptodate.
 
-<00_00_Q-eps-converted-to.pdf, id=23, 578.16pt x 433.62pt>
+<00_00_Q-eps-converted-to.pdf, id=31, 578.16pt x 433.62pt>
 File: 00_00_Q-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 00_00_Q-eps-converted-to.pdf>
-Package pdftex.def Info: 00_00_Q-eps-converted-to.pdf used on input line 337.
+Package pdftex.def Info: 00_00_Q-eps-converted-to.pdf used on input line 398.
 (pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
- [3<./00_00_Q-eps-converted-to.pdf>]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package epstopdf Info: Source file: <90_90_Q.eps>
 (epstopdf)                    date: 2016-11-13 11:23:36
 (epstopdf)                    size: 16914 bytes
@@ -412,15 +462,21 @@ Package epstopdf Info: Source file: <90_90_Q.eps>
 (epstopdf)                    size: 9507 bytes
 (epstopdf)             Command: <repstopdf --outfile=90_90_Q-eps-converted-to.pd
 f 90_90_Q.eps>
-(epstopdf)             \includegraphics on input line 362.
+(epstopdf)             \includegraphics on input line 424.
 Package epstopdf Info: Output file is already uptodate.
-
-<90_90_Q-eps-converted-to.pdf, id=44, 578.16pt x 433.62pt>
+<90_90_Q-eps-converted-to.pdf, id=32, 578.16pt x 433.62pt>
 File: 90_90_Q-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 90_90_Q-eps-converted-to.pdf>
-Package pdftex.def Info: 90_90_Q-eps-converted-to.pdf used on input line 362.
+Package pdftex.def Info: 90_90_Q-eps-converted-to.pdf used on input line 424.
 (pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package epstopdf Info: Source file: <m9_m3_Q.eps>
 (epstopdf)                    date: 2016-11-13 11:53:25
 (epstopdf)                    size: 47254 bytes
@@ -429,26 +485,25 @@ Package epstopdf Info: Source file: <m9_m3_Q.eps>
 (epstopdf)                    size: 18982 bytes
 (epstopdf)             Command: <repstopdf --outfile=m9_m3_Q-eps-converted-to.pd
 f m9_m3_Q.eps>
-(epstopdf)             \includegraphics on input line 387.
+(epstopdf)             \includegraphics on input line 448.
 Package epstopdf Info: Output file is already uptodate.
-
-<m9_m3_Q-eps-converted-to.pdf, id=45, 578.16pt x 433.62pt>
+<m9_m3_Q-eps-converted-to.pdf, id=33, 578.16pt x 433.62pt>
 File: m9_m3_Q-eps-converted-to.pdf Graphic file (type pdf)
 
 <use m9_m3_Q-eps-converted-to.pdf>
-Package pdftex.def Info: m9_m3_Q-eps-converted-to.pdf used on input line 387.
+Package pdftex.def Info: m9_m3_Q-eps-converted-to.pdf used on input line 448.
 (pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (8.00198pt too wide) in paragraph at lines 393--393
+Overfull \hbox (8.00198pt too wide) in paragraph at lines 454--454
 [][]\secfnt Ex-press-ing in-ten-tions with em-pa-thy & grat-
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+[4<./00_00_Q-eps-converted-to.pdf>]
+Underfull \vbox (badness 1715) has occurred while \output is active []
 
 Package epstopdf Info: Source file: <90_90_B.eps>
 (epstopdf)                    date: 2016-11-13 11:11:27
@@ -458,21 +513,20 @@ Package epstopdf Info: Source file: <90_90_B.eps>
 (epstopdf)                    size: 18381 bytes
 (epstopdf)             Command: <repstopdf --outfile=90_90_B-eps-converted-to.pd
 f 90_90_B.eps>
-(epstopdf)             \includegraphics on input line 411.
+(epstopdf)             \includegraphics on input line 477.
 Package epstopdf Info: Output file is already uptodate.
-<90_90_B-eps-converted-to.pdf, id=46, 578.16pt x 433.62pt>
+
+<90_90_B-eps-converted-to.pdf, id=53, 578.16pt x 433.62pt>
 File: 90_90_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 90_90_B-eps-converted-to.pdf>
-Package pdftex.def Info: 90_90_B-eps-converted-to.pdf used on input line 411.
+Package pdftex.def Info: 90_90_B-eps-converted-to.pdf used on input line 477.
 (pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+[5<./90_90_Q-eps-converted-to.pdf><./m9_m3_Q-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <09_09_B.eps>
 (epstopdf)                    date: 2016-11-13 11:27:52
 (epstopdf)                    size: 37302 bytes
@@ -481,13 +535,14 @@ Package epstopdf Info: Source file: <09_09_B.eps>
 (epstopdf)                    size: 15878 bytes
 (epstopdf)             Command: <repstopdf --outfile=09_09_B-eps-converted-to.pd
 f 09_09_B.eps>
-(epstopdf)             \includegraphics on input line 435.
+(epstopdf)             \includegraphics on input line 502.
 Package epstopdf Info: Output file is already uptodate.
-<09_09_B-eps-converted-to.pdf, id=47, 578.16pt x 433.62pt>
+
+<09_09_B-eps-converted-to.pdf, id=89, 578.16pt x 433.62pt>
 File: 09_09_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 09_09_B-eps-converted-to.pdf>
-Package pdftex.def Info: 09_09_B-eps-converted-to.pdf used on input line 435.
+Package pdftex.def Info: 09_09_B-eps-converted-to.pdf used on input line 502.
 (pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
 
 
@@ -504,13 +559,13 @@ Package epstopdf Info: Source file: <99_99_B.eps>
 (epstopdf)                    size: 15499 bytes
 (epstopdf)             Command: <repstopdf --outfile=99_99_B-eps-converted-to.pd
 f 99_99_B.eps>
-(epstopdf)             \includegraphics on input line 458.
+(epstopdf)             \includegraphics on input line 526.
 Package epstopdf Info: Output file is already uptodate.
-<99_99_B-eps-converted-to.pdf, id=48, 578.16pt x 433.62pt>
+<99_99_B-eps-converted-to.pdf, id=90, 578.16pt x 433.62pt>
 File: 99_99_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 99_99_B-eps-converted-to.pdf>
-Package pdftex.def Info: 99_99_B-eps-converted-to.pdf used on input line 458.
+Package pdftex.def Info: 99_99_B-eps-converted-to.pdf used on input line 526.
 (pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
 
 
@@ -524,57 +579,64 @@ Package epstopdf Info: Source file: <alphamap.eps>
 (epstopdf)                    size: 17012 bytes
 (epstopdf)             Command: <repstopdf --outfile=alphamap-eps-converted-to.p
 df alphamap.eps>
-(epstopdf)             \includegraphics on input line 468.
+(epstopdf)             \includegraphics on input line 539.
 Package epstopdf Info: Output file is already uptodate.
-<alphamap-eps-converted-to.pdf, id=49, 578.16pt x 433.62pt>
+<alphamap-eps-converted-to.pdf, id=91, 578.16pt x 433.62pt>
 File: alphamap-eps-converted-to.pdf Graphic file (type pdf)
 
 <use alphamap-eps-converted-to.pdf>
-Package pdftex.def Info: alphamap-eps-converted-to.pdf used on input line 468.
+Package pdftex.def Info: alphamap-eps-converted-to.pdf used on input line 539.
 (pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./aamas2017_sample.bbl [4<./90_90_Q-eps-converted-to.pdf><./m9_m3_Q-eps-convert
-ed-to.pdf>]) [5<./90_90_B-eps-converted-to.pdf><./09_09_B-eps-converted-to.pdf><
-./99_99_B-eps-converted-to.pdf>] [6
+(./aamas2017_sample.bbl [6<./90_90_B-eps-converted-to.pdf><./09_09_B-eps-convert
+ed-to.pdf>]) [7
+Missing character: There is no ’ (U+2019) in font aer9!
+<./99_99_B-eps-converted-to.pdf><./alphamap-eps-converted-to.pdf>] [8
 
-<./alphamap-eps-converted-to.pdf>]
-(./aamas2017_sample.aux)
+] (./aamas2017_sample.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1061 ({)
+### bottom level
 
 Here is how much of LuaTeX's memory you used:
- 3989 strings out of 495004
- 100000,128383 words of node,token memory allocated
- 406 words of node memory still in use:
-   5 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 43 glue_spec, 1 write nodes
-   avail lists: 2:23,3:195,4:2754,5:507,6:5637,7:567,9:520,10:466
- 7070 multiletter control sequences out of 65536+600000
+ 4991 strings out of 495004
+ 100000,154059 words of node,token memory allocated
+ 529 words of node memory still in use:
+   6 hlist, 2 vlist, 3 rule, 2 glue, 1 kern, 64 glue_spec, 1 write nodes
+   avail lists: 2:24,3:244,4:2617,5:560,6:6173,7:358,9:601,10:536
+ 8044 multiletter control sequences out of 65536+600000
  106 fonts using 4173835 bytes
- 41i,13n,35p,1664b,284s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 41i,21n,35p,1664b,2002s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<</usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><</usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><</usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi6.pfb><</usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi9.pfb><</usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr6.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr9.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy6.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-9.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><</u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><</us
-r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><</usr/share/texl
-ive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><</usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb><</usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb>
-Output written on aamas2017_sample.pdf (6 pages, 282628 bytes).
+ist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><</usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><</usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi5.pfb><</usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi6.pfb><</usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi9.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr5.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr6.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
+fb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><</u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><</usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><</usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><</usr/share/texlive/texmf-di
+st/fonts/type1/urw/helvetic/uhvb8a.pfb><</usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/helvetic/uhvr8a.pfb><</usr/share/texlive/texmf-dist/fonts/type1/urw/times
+/utmb8a.pfb><</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on aamas2017_sample.pdf (8 pages, 333926 bytes).
 
-PDF statistics: 202 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
+PDF statistics: 224 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,15 @@
 \begin{thebibliography}{10}
 
+\bibitem{baron1985does}
+S.~Baron-Cohen, A.~Leslie, and U.~Frith.
+\newblock Does the autistic child have a ``theory of mind'' ?
+\newblock {\em Cognition}, 1985.
+
+\bibitem{clark1996using}
+H.~H. Clark.
+\newblock {\em Using language}.
+\newblock Cambridge university press, 1996.
+
 \bibitem{clark1991grounding}
 H.~H. Clark and S.~E. Brennan.
 \newblock Grounding in communication.
@@ -42,11 +52,30 @@ P.~J. Gmytrasiewicz and E.~H. Durfee.
 \newblock A rigorous, operational formalization of recursive modeling.
 \newblock In {\em ICMAS}, pages 125--132, 1995.
 
+\bibitem{haroush2015neuronal}
+K.~Haroush and Z.~M. Williams.
+\newblock Neuronal prediction of opponent’s behavior during cooperative
+  social interchange in primates.
+\newblock {\em Cell}, 160(6):1233--1245, 2015.
+
 \bibitem{jin2011convergence}
 Z.-j. Jin, H.~Qian, S.-y. Chen, and M.-l. Zhu.
 \newblock Convergence analysis of an incremental approach to online inverse
   reinforcement learning.
 \newblock {\em Journal of Zhejiang University SCIENCE C}, 12(1):17--24, 2011.
+
+\bibitem{knoblich2008evolving}
+G.~Knoblich and N.~Sebanz.
+\newblock Evolving intentions for social interaction: from entrainment to joint
+  action.
+\newblock {\em Philosophical Transactions of the Royal Society of London B:
+  Biological Sciences}, 363(1499):2021--2031, 2008.
+
+\bibitem{lemaignan2015mutual}
+S.~Lemaignan and P.~Dillenbourg.
+\newblock Mutual modelling in robotics: Inspirations for the next steps.
+\newblock In {\em Proceedings of the 2015 ACM/IEEE Human-Robot Interaction
+  Conference}, 2015.
 
 \bibitem{meijering2011know}
 B.~Meijering, H.~Van~Rijn, N.~Taatgen, and R.~Verbrugge.
@@ -59,6 +88,11 @@ B.~Meijering, H.~Van~Rijn, N.~Taatgen, and R.~Verbrugge.
 A.~Y. Ng, S.~J. Russell, et~al.
 \newblock Algorithms for inverse reinforcement learning.
 \newblock In {\em Icml}, pages 663--670, 2000.
+
+\bibitem{palagi2008sharing}
+E.~Palagi.
+\newblock Sharing the motivation to play: the use of signals in adult bonobos.
+\newblock {\em Animal Behaviour}, 75(3):887--896, 2008.
 
 \bibitem{puterman1994}
 M.~Puterman.
