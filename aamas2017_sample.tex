@@ -217,28 +217,28 @@ Solving situations of misunderstanding requires two abilities: to build a cohere
 
 \section{Introduction}
 
-In any interaction that requires cooperation agents need to understand each other's intentions. A common ground \cite{clark1996using}, for instance a spoken language -- or even a gestural language, helps to reach such mutual understanding \cite{palagi2008sharing}\cite{knoblich2008evolving}. Without any such ground, agents can still analyse their respective motivations through their goal-directed behaviors in order to cooperate or intentionally defect \cite{haroush2015neuronal}. Moreover, they can adapt their behavior in order to be more easily understood. We investigate in this paper a cognitive architecture enabling virtual agents of such analysis. 
+In any interaction that requires cooperation agents need to understand each others intentions. A common ground \cite{clark1996using}, for instance a spoken language -- or even a gestural language, helps to reach such mutual understanding \cite{palagi2008sharing}\cite{knoblich2008evolving}. Without any such ground, agents can still analyse their respective motivations through their goal-directed behaviors in order to cooperate or intentionally defect, as observed in monkeys \cite{haroush2015neuronal}. Moreover, they can adapt their behavior in order to be more easily understood. We investigate in this paper a cognitive architecture enabling virtual agents of such analysis. 
 
-As humans, even without any common language, we still have gestures and facial expressions in order to communicate our intentions. But when we try to interact with animals it start to be difficult to share intentions. We meet the same problem in Human-Robot interaction, where human facial expression are not always understood by the machine. It is often even more difficult for robot to share their intentions without verbal explanation since they can not always express facial signal. In that case, being able to express intentions through non-communicative actions (e.g. exaggerating a behavior) could infuse machines with a stronger illusion of life. 
+As humans, even without any common language, we still use gestures and facial expressions to communicate our intentions. But it start to be difficult when we try to interact and share intentions with animals. We meet the same problem in Human-Robot interactions, where humans facial expressions are not always understood by machines. It is even more difficult for robots to share their intentions without straightforward verbal explanations since they can not always express facial signals. In such cases, being able to express intentions through non-communicative actions (e.g. exaggerating a behavior) could infuse machines with stronger illusions of life. 
 
-Developed by Baron-Cohen and Leslie~\cite{baron1985does}, the Theory of Mind (ToM) describes the ability to attribute mental states and knowledge to others. In interaction, humans are permanently collecting and analysing huge quantity of information to stay aware of emotions, goals and understandings of their fellows. 
+Developed by Baron-Cohen and Leslie~\cite{baron1985does}, the Theory of Mind (ToM) describes the ability to attribute mental states and knowledge to others. In interaction, humans are permanently collecting and analyzing huge quantity of information to stay aware of emotions, goals and understandings of their fellows. 
 
-Many ToM-based architecture have been developed in order to study multi-agent behaviors in social games. But so far, most of these applications where limited to first order of modeling (agents does not take into account how they are modeled by others) while higher orders leads to better performances in a range of simple social games \cite{meijering2011know}\cite{de2015savvy}\cite{weerd2015negotiating}\cite{de2014agent}\cite{de2014theory}\cite{de2011advantage}. However, 2nd order (an agent has a model of itself viewed by others) seams sufficient to generate rich social behaviors \cite{pynadath2011modeling}. Higher orders (an agent has a model of its own theory of mind imagined by other agents), although they outperform 2nd order in some cases (especially fourth \cite{de2014theory}) do not seams to bring important advantages \cite{weerd2015negotiating}. 
+Many ToM-based architecture have been developed in order to study multi-agent behaviors in social games. But so far, most of these applications where limited to first order of modeling (agents does not take into account how they are modeled by others) while higher orders lead to better performances in a range of simple social games \cite{meijering2011know}\cite{de2015savvy}\cite{weerd2015negotiating}\cite{de2014agent}\cite{de2014theory}\cite{de2011advantage}. However, 2nd order (agents have models of themselves viewed by others) seams sufficient to generate rich social behaviors \cite{pynadath2011modeling}. Higher orders (agents have models of their own theory of mind imagined by others), although they outperform 2nd order in some cases (especially fourth order \cite{de2014theory}) do not reveal important advantages \cite{weerd2015negotiating}. 
 
-We introduce a cognitive architecture enabling second order of modeling. In contrast with previous approaches \cite{meijering2011know}\cite{de2014agent}\cite{pynadath2011modeling}, this one is not recursive. In recursive modeling, an agent re-use its own architecture (that allows theory of mind) to model other agents \cite{gmytrasiewicz1995rigorous}. In multi-agent framework, recursions need to be stopped at a given depth. Otherwise it would lead to an infinite loop of mutual modeling, known as infinite regress in epistemic logic \cite{clark1991grounding}. Such approaches have limits: it is difficult to process in parallel reasoning of all agents, it becomes heavy in computation beyond second order of modeling, and different agents or their images (perceived by others) may have different reasoning and may adopt different behaviors facing similar observations.
+We introduce a cognitive architectures enabling second order of modeling. In contrast with previous approaches \cite{meijering2011know}\cite{de2014agent}\cite{pynadath2011modeling}, this one is not recursive. In recursive modeling, agents re-use their own architecture (that allows theory of mind) to model other agents \cite{gmytrasiewicz1995rigorous}. In multi-agent framework, recursions need to be stopped at a given depth. Otherwise it would lead to an infinite loop of mutual modeling, called infinite regress in epistemic logic \cite{clark1991grounding}. Such approaches have limits: it is difficult to process in parallel reasoning of all agents, it becomes heavy in computation beyond second order of modeling, and different agents or their images (perceived by others) may have different reasoning and may adopt different behaviors facing similar observations.
 
-In our non-recursive approach, one agent has three models: a model of itself, a model of others and a model of itself seen by others. None of these models are performing theory of mind. At any instant, the agent updates its three models given his observations and use them to make predictions and decisions.
+In our non-recursive approach, one agent has three kinds of model: a first one for itself, a second one for others and a third one for itself seen by others. None of these models are performing theory of mind. At any instant, each agent updates its three models given its observations and use them to make predictions and decisions.
 
-The following sections describe this architecture and the algorithms that are used to model agents and to make decisions. Then we present an algorithm that aims to express intentions through decisions making. We introduce two intrinsic rewards based on models of empathy and gratitude, expected to lead agents to more cooperative interactions. Finally we implement an iterative prisoner's dilemma in order to study the resulting behavior of our approach in a 2-agents system. We explore various conditions where agents express intentions or not, with different usages of intrinsic rewards. 
+The following sections describe this architecture and how it is used to model agents and to make decisions. Then we present an algorithm that uses these models to express intentions through decisions making. We also introduce two intrinsic rewards based on models of empathy and gratitude, expected to lead agents into more cooperative interactions. Finally we implement an iterative prisoner's dilemma in order to study the resulting behavior of our approach in a 2-agents system. We explore various conditions where agents express intentions or not, with different usages of intrinsic rewards. 
 
 \section{Mutual modeling}
 
 \subsection{Model of itself}
 
-An agent $i$ models itself as a RL agent: at a time $t$, it chooses an action $a^t_i$. Depending on this decision and all other agent's decisions $\{a^t_j\}_{j \neq i}$, it receives an observation $o^{t+1}_i = O(a^t_1, a^t_2, .. a^t_n)$ ($n$ being the number of agents) and a reward that only depend on this observation $r^{t+1}_i = R_i(o^{t+1})$. Each agent has its own reward function that is unknown by other agents.
+An agent $i$ models itself as a RL agent: at time $t$, it chooses an action $a^t_i$. Depending on this decision and all other agent's decisions $\{a^t_j\}_{j \neq i}$, it receives an observation $o^{t+1}_i = \mathbb{O}(a^t_1, a^t_2, .. a^t_n)$ ($n$ being the number of agents) and a reward that only depend on this observation $r^{t+1}_i = R_i(o^{t+1})$. Each agent has its own reward function that is unknown by other agents.
 
 As in \cite{sequeira14}, this framework is simplified by the agent as a \textit{Markovian Decision Process} (MDP) \cite{puterman1994} where the observations are assumed to be states that just depend on its previous observation and action following an unknown probability distribution:
-$$o^{t+1}_i = O(a^t_1, a^t_2, .. a^t_n) \sim \mathbb{P}[o^{t+1}_i|a^t_i,o^{t}_i]$$
+$$o^{t+1}_i = \mathbb{O}(a^t_1, a^t_2, .. a^t_n) \sim \mathbb{P}[o^{t+1}_i|a^t_i,o^{t}_i]$$
 Hence, at the beginning, the decision making of the agent is performed by Q-learning \cite{watkins1992q}. Given the observation $o^{t+1}$, the agent learns the best new action $a^{t+1}$ in order to maximize its future rewards (see algo. \ref{algo1}).\\
 \RestyleAlgo{boxruled}
 \begin{algorithm}[h]
@@ -256,17 +256,17 @@ Hence, at the beginning, the decision making of the agent is performed by Q-lear
 
 \subsection{Model of others}
 
-At the same time, it receives actions and observations of other agents $\{a^t_j\}_{j \neq i}$ and $\{o^t_j\}_{j \neq i}$. Given this information, it can infer their reward functions $\{R_j\}_{j \neq i}$ by \textit{Inverse Reinforcement Learning} (IRL) \cite{ng2000algorithms}. It this setup, the IRL must be performed on-line. In \cite{jin2011convergence} they provide an incremental algorithm for on-line IRL in a MDP framework. This method is efficient but not so intuitive. As our final goal is to develop agents that could interact with humans, we want to adopt a less efficient but more intuitive approach that looks like how any human (or even a child) would infer the intentions of others. And maybe the simplest way is the following:
+At the same time, it receives actions and observations of other agents $\{a^t_j\}_{j \neq i}$ and $\{o^t_j\}_{j \neq i}$. Given this information, it can infer their reward functions $\{R_j\}_{j \neq i}$ by \textit{Inverse Reinforcement Learning} (IRL) \cite{ng2000algorithms}. It this setup, the IRL must be performed on-line. In \cite{jin2011convergence} they provide an incremental algorithm for on-line IRL in a MDP framework. This method is efficient but not so intuitive. As our final goal is to develop agents that could interact with humans, we want to adopt a less efficient but more intuitive approach that looks like how any human -- or child -- would infer the intentions of others. Maybe one of the simplest ways is the following:
 
 \textit{If I liked I repeat, otherwise I change:} Supposing agent $j$ receives an observation \textit{``light"} and chooses action \textit{``press-the-button"}. Then it receives new observation \textit{``glass-of-juice"}. If it liked the juice, probably the next time it will observe the signal \textit{``light"} it would again choose action \textit{``press-the-button"}. Otherwise it would choose another possible action.
 
-In order to formalize this approach, we denote as $\hat r^t_{i:j} = \hat R_{i:j}(o^t_j)$ the reward of agent $j$ at time $t$ inferred by agent $i$. Agent $i$ memorizes, for each possible observation $o_j$ of agent $j$, the last action $A_{i:j}(o_j)$ it chose facing $o_j$. Agent $i$ also memorizes, for each observation $o_j$, the next observation $O_{i:j}(o_j)$ perceived as a consequence of choosing action $A_{i:j}(o_j)$. If at time $t$, agent $j$ observes $o^t_j$ and chooses once again the action $a^t_j = A_{i:j}(o^t_j)$, it means agent $j$ ``liked" the previous consequence of this choice, says $o_{\textit{prev}} = O_{i:j}(o^t_j)$. In that case, agent $i$ increments its inferred reward function $\hat R_{i:j}(o^t_j)$ for agent $j$ as follow:
-$$\hat R_{i:j}(o_{\textit{prev}}) \leftarrow (1-\frac{1}{\sqrt{n(o^t_j)}}).\hat R_{i:j}(o_{\textit{prev}}) + \frac{1}{\sqrt{n(o^t_j)}}$$
+In order to formalize this approach, we denote as $\hat r^t_{i:j} = \hat R_{i:j}(o^t_j)$ the reward of agent $j$ at time $t$ inferred by agent $i$. Agent $i$ memorizes, for each possible observation $o_j$ of agent $j$, the last action $A_{i:j}(o_j)$ it chose facing $o_j$. Agent $i$ also memorizes, for each observation $o_j$, the previous following observation $O_{i:j}(o_j)$ perceived as a consequence of choosing action $A_{i:j}(o_j)$. If at time $t$, agent $j$ observes $o^t_j$ and chooses once again the action $a^t_j = A_{i:j}(o^t_j)$, it means agent $j$ ``liked" the previous consequence of this choice, says $o_{\textit{prev}} = O_{i:j}(o^t_j)$. In that case, agent $i$ increments its inferred reward function $\hat R_{i:j}(o^t_j)$ for agent $j$ as follow:
+$$\hat R_{i:j}(o_{\textit{prev}}) \leftarrow (1-\frac{1}{\sqrt{n_{i:j}(o^t_j)}}).\hat R_{i:j}(o_{\textit{prev}}) + \frac{1}{\sqrt{n_{i:j}(o^t_j)}}$$
 
-Where $n(o^t_j)$ is the number of times agent $i$ observed agent $j$ observing $o^t_j$. Contrariwise, if it chooses a different action $a^t_j \neq A_{i:j}(o^t_j)$, agent $i$ decrements the estimated reward function $\hat R_{i:j}(o^t_j)$ for agent $j$:
-$$\hat R_{i:j}(o_{\textit{prev}}) \leftarrow (1-\frac{1}{\sqrt{n(o^t_j)}}).\hat R_{i:j}(o_{\textit{prev}}) - \frac{1}{\sqrt{n(o^t_j)}}$$
+Where $n_{i:j}(o^t_j)$ is the number of times agent $i$ observed agent $j$ observing $o^t_j$. Contrariwise, if it chooses a different action $a^t_j \neq A_{i:j}(o^t_j)$, agent $i$ decrements the estimated reward function $\hat R_{i:j}(o^t_j)$ for agent $j$:
+$$\hat R_{i:j}(o_{\textit{prev}}) \leftarrow (1-\frac{1}{\sqrt{n_{i:j}(o^t_j)}}).\hat R_{i:j}(o_{\textit{prev}}) - \frac{1}{\sqrt{n_{i:j}(o^t_j)}}$$
 
-Then, given the inferred reward functions, an agent can predict the next action of other agents. Such a prediction can be used to adapt its own next decision in consequence, and also to evaluate how it is able to model other agents. This intuitive IRL process is summarized in (see algo.~\ref{algo2}).
+Then, given the inferred reward functions, an agent can predict the next action of other agents. Such a prediction can be used to adapt its own next decision in consequence, and also to evaluate how it is able to model other agents. This intuitive IRL process is summarized in algo.~\ref{algo2}.
 \RestyleAlgo{boxruled}
 \begin{algorithm}[h]
 	Initialize $R_{i:j}(o)$\\
@@ -286,7 +286,7 @@ Then, given the inferred reward functions, an agent can predict the next action 
 		Update memories:\\
 		$A_{i:j}(o^t_j) = a^t_j$\\
 		$O_{i:j}(o^t_j) = o^{t+1}_j$\\
-		$n(o^t_j)	\leftarrow n(o^t_j)+1$
+		$n_{i:j}(o^t_j)	\leftarrow n_{i:j}(o^t_j)+1$
 	}
 	\caption{Intuitive on-line IRL. Agent $i$ is inferring the reward function of agent $j$.}
 	\label{algo2}
@@ -294,18 +294,18 @@ Then, given the inferred reward functions, an agent can predict the next action 
 
 \subsection{Model of itself seen by others}
 
-In order to model itself perceived by other agents, an agent processes exactly the same way used to model other agents. Thus, it infers its own reward function $R_i$ given its previous actions and observations in order to estimate how other agents would infer its reward function. In the following sections, we denote as $\hat R_{i:(j:i)}$ this estimated function. As in (ref section 2.3), agent $i$ uses its memories of its previous choices of action $A_{i:(j:i)}(o_i)$ and consequences $O_{i:(j:i)}(o_i)$ observed by another agent $j$ for all possible observations $o_i$ in order to update $\hat R_{i:(j:i)}$. Note that if all agents are aware of all the true observations of others and have the same initial estimations of others rewards (for instance, $R^0_{i:(j:i)}(o_i)=R^0_{j:i}(o_j)=0 \hspace{1mm}\forall i,j,o_i,o_j$), we then have the equality:
+In order to model itself perceived by other agents, an agent $i$ processes exactly the same way than the one used to model other agents. Thus, it infers its own reward function $R_i$ given its previous actions and observations in order to estimate how other agents would infer its reward function. In the following sections, we denote as $\hat R_{i:(j:i)}$ this estimated function. As before, agent $i$ uses its memories of its previous choices of action $A_{i:(j:i)}(o_i)$ and consequences $O_{i:(j:i)}(o_i)$ observed by another agent $j$ for all possible observations $o_i$ in order to update $\hat R_{i:(j:i)}$. Note that if all agents are aware of all the true observations of others and have the same initial estimations of others rewards (for instance, $R^0_{i:(j:i)}(o_i)=R^0_{j:i}(o_j)=0 \hspace{1mm}\forall i,j,o_i,o_j$), we then have the equality:
 $$\hat R^t_{i:(j:i)} = \hat R^t_{j:i} \hspace{3mm}\forall t$$
 
 
 \section{Expressing intentions}\label{3}
 
-At this moment, our agents are just behaving in an ``egoist" way, trying to maximize their own rewards and optionally they model others and themselves seen by others. But in order to promote cooperation, we provide any agent with the possibility to help other agent to infer its reward function. In that purpose an agent can, each time it has not received the expected reward, move the next time to another action even if the last one was in average the optimal choice. In other words, imagine the agent has learned that each time it sees an observation \textit{``light"} the optimal action is \textit{``press-the-button"} and leads with probability 0.5 to \textit{``glass-of-wine"} associated with positive reward ($R(\textit{wine}) = 1$) and with probability 0.5 to \textit{``electric-chock"} that is associated with negative reward ($R(\textit{chock})=-0.9$), while another action \textit{``do-nothing''} always leads to \textit{``nothing"} associated with a null reward ($R(\textit{nothing})=0$). In that case, a RL-based behavior would always chose action ``press-the-button" that leads in average to a positive reward ($\hat r = 0.1$). But another agent observing this behavior, with no additive information, would infer that both \textit{``glass-of-wine"} and \textit{``electric-chock"} are associated with positive rewards while \textit{``nothing"} is associated with negative (or null) reward. Now, if the agent, each time it receives the electric chock, do nothing the very next time it sees the light, it becomes possible for an observer to guess it does not like the chock but tried the action because it wanted the glass of wine. 
+Until now, our agents are just behaving in an ``egoist" way, trying to maximize their own rewards. But in order to promote cooperation, we provide any agent with a behavior that helps other agents to infer its own reward function. In that purpose, each time it is disappointed by a small reward (or a punishment), an agent can move the next time to another action even if the last one was, in average, the optimal choice. In other words, imagine the agent has learned that, each time it sees an observation \textit{``light"}, the optimal action is \textit{``press-the-button"}. Let's say that this action leads with probability 0.5 to \textit{``glass-of-wine"} associated with positive reward ($R(\textit{wine}) = 1$) and with probability 0.5 to \textit{``electric-chock"} that is associated with negative reward ($R(\textit{chock})=-0.9$), while another action \textit{``do-nothing''} always leads to \textit{``nothing"} associated with a null reward ($R(\textit{nothing})=0$). In that case, a RL-based behavior would always chose action ``press-the-button" that leads in average to a positive reward ($\hat r = 0.1$). But another agent observing this behavior, with no additive information, would infer that both \textit{``glass-of-wine"} and \textit{``electric-chock"} are associated with positive rewards while \textit{``nothing"} is associated with negative (or null) reward. Now, if the agent, each time it receives the electric chock, do nothing the very next time it sees the light, it becomes possible for an observer to guess it does not like the chock but tried the action because it wanted the glass of wine. 
 
-Formally, the agent is using its model of itself seen by others: when agent $i$ is perceiving $o_i$, it looks at the true reward associated with the last consequence $O_{i:(j:i)}(o_i)$:
-$$r = R_i\left( O_{i:(j:i)}(o_i) \right)$$
+Formally, the agent is using its model of itself seen by others: when agent $i$ is perceiving $o_i$, it looks at the true reward associated with the previous following consequence $O_{i:(j:i)}(o_i)$:
+$$r_\textit{prev} = R_i\left( O_{i:(j:i)}(o_i) \right)$$
 
-if this reward was acceptable (\textit{e.g.} superior to a fixed threshold) the agent repeat the last action it did after observing $o_i$, hence $A_{i:(j:i)}(o_i)$. Otherwise, it chooses the best of the remaining actions (according to Q-values).
+If this reward was acceptable (\textit{e.g.} superior to a fixed threshold) the agent repeat the last action it did after observing $o_i$, hence $A_{i:(j:i)}(o_i)$. Otherwise, it chooses the best of the remaining actions (according to Q-values).
 
 That way we enable agents to help each others in inferring their reward functions. Now our agents have the choice between two possible behaviors: the classical Q-learning or this expressing-intentions behavior (described step by step in algo.~\ref{algo3}).\\
 \\
@@ -330,13 +330,13 @@ That way we enable agents to help each others in inferring their reward function
 			$n(o^t_i)	\leftarrow n(o^t_i)+1$
 		}
 	}
-	\caption{Intuitive on-line IRL. Agent $i$ is inferring its own reward function as it could be estimated by agent $j$.}
+	\caption{Intuitive on-line IRL. Agent $i$ helps agent $j$ to infer $i$'s reward function.}
 	\label{algo3}
 \end{algorithm}
 
 \section{Empathy and gratitude}
 
-We finally provide our agents with intrinsic rewards (ref intrinsic motivation) that depend on how they estimate the rewards of other agents. We define two different intrinsic rewards that an agent can feel observing the other ones:
+We finally provide our agents with intrinsic rewards (ref intrinsic motivation) that depend on how they estimate the rewards of other agents. We define two different intrinsic rewards that agents can feel observing each others:
 
 \textbf{Empathy} $e^t_{i:j}$ of an agent $i$ observing an agent $j$ at a time $t$ is proportional to its estimation of the reward that $j$ received:
 $$e^t_{i:j} \propto \hat R_{i:j}(o^t_j)$$
@@ -348,28 +348,28 @@ Our model of empathy is based on de Waal's \textit{Action-Percept Model} framewo
 
 The intrinsic reward for gratitude is based on the idea that ``\textit{it's the thought that counts}", expression used to indicate that it is the kindness behind an act that matters, however imperfect or insignificant the act may be.
 
-Now, at time $t$, as agent $i$ observes a signal $o^t_i$, it receives a total reward $\mathfrak{r}^t_i$, that is sum of extrinsic ($R_i(o^t_i)$) and intrinsic rewards (empathy and gratitude):
+Now, at time $t$, as agent $i$ observes a signal $o^t_i$, it receives a total reward $\mathfrak{r}^t_i$, sum of extrinsic ($R_i(o^t_i)$) and intrinsic (empathy and gratitude) rewards:
 $$\mathfrak{r}^t_j = R_i(o_i) + \sum_{j\neq i} \alpha_i\,e^t_{i:j} + \beta_i\,g^t_{i:(j:i)}$$
 
-Where $\alpha$ and $\beta$ are control parameters that are used to try different situations. For example, we can compare agents that only feel empathy ($\beta=0$) or only gratitude ($\alpha=0$). We can also explore negative values of $\alpha$ and $\beta$ that could lead to aggressive behaviors.
+Where $\alpha$ and $\beta$ are coefficients of proportionality that are used to try different situations. For example, we can compare agents that only feel empathy ($\alpha>0$, $\beta=0$) or only gratitude ($\alpha=0$, $\beta>0$). We can also explore negative values of $\alpha$ and $\beta$ that could lead to aggressive behaviors.
 
 \section{Prisoner's dilemma}
-The Prisoner's Dilemma (PD) is an ideal game to study the social behavior of our agents. In that context, we focus on a 2-agents system. Each agent has the choice between two actions \textit{defect} or \textit{cooperate}. If both agent choose to cooperate, they receive a reward $\mathcal{R}$. If they both defect, they receive a smaller reward $\mathcal{P}$. If one agent defect while the other cooperate, the agent that defected receives the highest reward $\mathcal{T}$ and the agent that cooperated receives the smallest reward $\mathcal{S}$. The generalized form of PD requires following conditions:
+The Prisoner's Dilemma (PD) is an ideal game to study the social behavior of our agents. In that context, we focus on a 2-agents system. Each agent has the choice between two actions: \textit{defect} or \textit{cooperate}. If both agent choose to cooperate, they receive a reward $\mathcal{R}$. If they both defect, they receive a smaller reward $\mathcal{P}$. If one agent defect while the other cooperate, the agent that defected receives the highest reward $\mathcal{T}$ and the agent that cooperated receives the smallest reward $\mathcal{S}$. The generalized form of PD requires following conditions:
 $$\mathcal{T}>\mathcal{R}>\mathcal{P}>\mathcal{S}$$
 The payoff relationship $\mathcal{R}>\mathcal{P}$ implies that mutual cooperation is superior to mutual defection, while the payoff relationships $\mathcal{T}>\mathcal{R}$ and $\mathcal{P}>\mathcal{S}$ imply that defection is the dominant strategy for both agents. We implemented the iterated version of this game (IPD), where agents successively play this game and remember previous actions of their opponent. Classical RL-learning would always tend to the Nash equilibrium \cite{sandholm1996multiagent} that consists in always choosing defection.
 
-We implemented an IPD with payoff $\mathcal{T}=1$, $\mathcal{R}=0.6$, $\mathcal{P}=0$, $\mathcal{S}=-1$. Table~\ref{PDmatrix} displays the payoff matrix of this game.
+We implemented an IPD with payoff $\mathcal{T}=1$, $\mathcal{R}=0.6$, $\mathcal{P}=0$, $\mathcal{S}=-1$. Table~\ref{payoff} displays the payoff matrix of this game.
 \begin{table}[h]
 	\centering
-	\label{PDmatrix}
 	\begin{tabular}{|c|c|c|} \hline
 		&Cooperate&Defect\\ \hline
 		Cooperate & 0.6, 0.6 & -1, 1\\ \hline
 		Defect & 1, -1& 0, 0\\ \hline
 	\end{tabular}
 	\caption{IPD payoff matrix}
+	\label{payoff}
 \end{table} 
-Each game last 1000 iterations. At each iteration $t$, agent $i$ chooses action $a^t_i\in \{\textit{cooperate, defect}\}$ and receives a signal $o^{t}_i\in \{\mathcal{O_R, }\mathcal{O_S, }\mathcal{O_T, }\mathcal{O_P}\}$ associated with the corresponding reward ($R_i(\mathcal{O_S}) = \mathcal{S}$, etc). Agent $i$ also receive the action and the observation of the other agent, $a^t_j$ and $o^{t}_j$. But agents are not aware of the payoff matrix that defines the reward of the other (in fact, it is the same).
+Each game last 1000 iterations. At each iteration $t$, agent $i$ chooses action $a^t_i\in \{\textit{cooperate, defect}\}$ and receives a signal $o^{t}_i\in \{\mathcal{O_R, }\mathcal{O_S, }\mathcal{O_T, }\mathcal{O_P}\}$ associated with the corresponding reward ($R_i(\mathcal{O_S}) = \mathcal{S}$, etc). Agent $i$ also receives the action and the observation of the other agent, $a^t_j$ and $o^{t}_j$. But agents are not aware of the payoff matrix that defines the rewards of the other (in fact, it is the same).
 
 The Q-learning behavior of agents was implemented with parameters $\gamma = 0.8$, $\eta = 0.05$ and actions were chosen using the Gibbs softmax method:
 $$a \sim \mathbb{P}[a|o] =  \frac{e^{\tau Q(o,a)}}{\sum_b e^{\tau Q(o,b)}}$$
@@ -378,10 +378,9 @@ With temperature parameter $\tau= 5$.
 \section{Results and discussion}
 
 \subsection{Pure Q-learning}\label{61}
-We first tried to let our agents behave without expressing intentions and with no intrinsic rewards for empathy or gratitude ($\alpha = \beta = 0$). As expected, agents quickly tend to the Nash equilibrium and always defect (ref to fig1). Each agent learned a wrong reward function for the other. Table~\ref{R_00_00_Q} shows the average resulting reward functions learned by the agents over 50 IPD game with 1000 iterations. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null (see column $\mathcal{P}$ of table~\ref{R_00_00_Q}).
+We first tried to let our agents behaving without expressing intentions and with no intrinsic rewards for empathy or gratitude ($\alpha = \beta = 0$). As expected, agents quickly tend to the Nash equilibrium and always defect (see figure~\ref{00_00_Q}). Each agent learned a wrong reward function for the other. Table~\ref{R_00_00_Q} shows the average resulting reward functions learned by the agents over 50 IPD game with 1000 iterations. We can see that with variances agents successfully learned that the other has a negative reward $\mathcal{S}$, but, since the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null (see column $\mathcal{P}$ of table~\ref{R_00_00_Q}).
 \begin{table}[h]
 	\centering
-	\label{R_00_00_Q}
 	\begin{tabular}{|c|c|c|c|c|} \hline
 		&$\mathcal{T}$&$\mathcal{R}$&$\mathcal{P}$&$\mathcal{S}$\\ \hline
 		Truth & 1 & 0.6 & \cellcolor{yellow!30}0 & -1\\ \hline \hline
@@ -391,22 +390,23 @@ We first tried to let our agents behave without expressing intentions and with n
 		$\sigma^2$ & 0.36&  0.46 & \cellcolor{yellow!30}0.15 &  0.094\\ \hline
 	\end{tabular}
 	\caption{\textcolor{red}{$\alpha=0$, $\beta=0$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null (see yellow cells).}
+	\label{R_00_00_Q}
 \end{table} 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{00_00_Q}
 	\caption{\textcolor{red}{$\alpha=0$, $\beta=0$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}
+	\label{00_00_Q}
 	%\vskip -6pt
 \end{figure}
 
 \subsection{Q-learning with empathy \& gratitude}\label{62}
 
-\textbf{Gentle vs gentle}: Here we look at the behavior of agents where both receive positive intrinsic reward for empathy and gratitude ($\alpha=0.9$, $\beta=0.3$). Paradoxically, it sped up Nash equilibrium's attraction (ref to fig2). As in pure Q-learning situation, both agents learned a false reward function where $\mathcal{P}$ is hight for the other (see column $\mathcal{P}$ of table~\ref{R_90_90_Q}). Thus, they were intrinsically rewarded by empathy while they where defecting. Furthermore, as they also learned that the other is punished while they both cooperate (see column $\mathcal{R}$ of table~\ref{R_90_90_Q}), they where intrinsically punished while they cooperated. 
+\textbf{Gentle vs gentle}: Here we look at the behavior of agents where both receive positive intrinsic reward for empathy and gratitude ($\alpha=0.9$, $\beta=0.3$). Paradoxically, it sped up Nash equilibrium's attraction (see figure~\ref{90_90_Q}). As in pure Q-learning situation, both agents learned a false reward function where $\mathcal{P}$ is hight for the other (see column $\mathcal{P}$ of table~\ref{R_90_90_Q}). Indeed, they were intrinsically rewarded by empathy while they where defecting. Furthermore, as they also learned that the other is punished while they both cooperate (see column $\mathcal{R}$ of table~\ref{R_90_90_Q}), they where intrinsically punished while they cooperated. 
 
 \begin{table}[h]
 	\centering
-	\label{R_90_90_Q}
 	\begin{tabular}{|c|c|c|c|c|} \hline
 		&$\mathcal{T}$&$\mathcal{R}$&$\mathcal{P}$&$\mathcal{S}$\\ \hline
 		Truth & 1 &  \cellcolor{yellow!30}0.6 & \cellcolor{yellow!30}0 & -1\\ \hline \hline
@@ -415,23 +415,23 @@ We first tried to let our agents behave without expressing intentions and with n
 		$\hat R_{2:1}$ & 0.56&  \cellcolor{yellow!30}-0.32 & \cellcolor{yellow!30}0.99& -0.62\\ \hline
 		$\sigma^2$ & 1.6e-01  &  \cellcolor{yellow!30}2.5e-01  & \cellcolor{yellow!30}7.7e-08 &  9.6e-02\\ \hline
 	\end{tabular}
-	\label{R_90_90_Q}
 	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0.3$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null. Furthermore, as they also learned that the other is punished while they both cooperate and receive reward $\mathcal{R}$ (see yellow cells).}
+	\label{R_90_90_Q}
 \end{table}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{90_90_Q}
 	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0.3$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}
+	\label{90_90_Q}
 	%\vskip -6pt
 \end{figure}
 
 
-\textbf{Agressive vs agressive}: This time we looked at the opposite situation, where both agent were intrinsically punished by empathy or gratitude ($\alpha= -0.9$, $\beta= -0.3$). Again paradoxically, it slowed down Nash equilibrium's attraction. For the same reason: as both agent learned the other is rewarded by $\mathcal{P}$, they are intrinsically punished when they defect while the other is cooperating (see column $\mathcal{P}$ of table~\ref{R_m9_m9_Q}).
+\textbf{Aggressive vs aggressive}: This time we looked at the opposite situation, where both agents were intrinsically punished by empathy or gratitude ($\alpha= -0.9$, $\beta= -0.3$). Again paradoxically, it slowed down Nash equilibrium's attraction (see figure~\ref{m9_m9_Q}). For the same reason: since both agent learned the other is rewarded by $\mathcal{P}$, they were intrinsically punished when they defected while the other was cooperating (see column $\mathcal{P}$ of table~\ref{R_m9_m9_Q}).
 
 \begin{table}[h]
 	\centering
-	\label{R_m9_m9_Q}
 	\begin{tabular}{|c|c|c|c|c|} \hline
 		&$\mathcal{T}$&$\mathcal{R}$&$\mathcal{P}$&$\mathcal{S}$\\ \hline
 		Truth & 1 & 0.6 & \cellcolor{yellow!30}0 & -1\\ \hline \hline
@@ -441,12 +441,14 @@ We first tried to let our agents behave without expressing intentions and with n
 		$\sigma^2$ & 0.14 & 0.16 & \cellcolor{yellow!30}0.15  &  0.083\\ \hline
 	\end{tabular}
 	\caption{\textcolor{red}{$\alpha=-0.9$, $\beta = -0.3$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null (see yellow cells).}
+	\label{R_m9_m9_Q}
 \end{table}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{m9_m3_Q}
 	\caption{\textcolor{red}{$\alpha=-0.9$, $\beta=-0.3$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}
+	\label{m9_m9_Q}
 	%\vskip -6pt
 \end{figure}
 
@@ -454,12 +456,11 @@ We first tried to let our agents behave without expressing intentions and with n
 \subsection{Expressing intentions with empathy \& gratitude}\label{63}
 Here we implemented the expressing-intentions behavior described in section~\ref{3}. The choice of the threshold $\theta$ that determines if the previous reward was worth to repeat the previous action is tricky in the case of IPD. If $\mathcal{P}<\theta\leq\mathcal{R}$ , then agents always cooperate. Indeed, as soon as both agents defect, they simultaneously change to cooperation and keep cooperating till the end. For a similar reason, if $\mathcal{P}\geq\theta$, then, if both agents start by cooperation, they always cooperate otherwise they always defect. In both cases, they can not efficiently learn the reward function of the other. This singularity comes from the fact agents just have two possibilities of action. To avoid this problem, we used a random threshold $\theta$ that is, with probability $p=\mathcal{R}$, higher than $\mathcal{R}$ and with probability $1-p$ smaller than $\mathcal{R}$ (which amounts, in our case, to take $\theta$ uniformly in [0;1]). In a sens, this stochastic choice represents the hesitation of agents between two temptations: to be content with $\mathcal{R}$ or to focus on maximal reward $\mathcal{T}$. 
 
-In our simulations, at the beginning (while $t<300$) both agents are following Q-learning behavior. Then, during a phase (from $t=301$ up to $t=700$) they express their intentions using the algorithm of section~\ref{3}. Finally, assuming they had time to learn about each other, they move back to Q-learning till the end ($t=1000$).
+In our simulations, at the beginning (from $t=0$ up to $t=300$) both agents are following Q-learning behavior. Then, during a phase (from $t=301$ up to $t=700$) they express their intentions using the algorithm of section~\ref{3}. Finally, assuming they had time to learn about each other, they move back to Q-learning till the end (from $t=701$ up to $t=1000$).
 
-\textbf{Only empathy}: we first look at the resulting behavior when both agents just receive intrinsic reward for empathy ($\alpha=0.9$, $\beta=0$). As a result, at the beginning agents are attracted by Nash equilibrium. Then, while they were expressing their intentions, they defected as much as they cooperated in average. After this expressing phase, agent could better understand each other's intentions (see table~\ref{R_90_90_B}) and, led by intrinsic reward for empathy, they started to always cooperate (see figure~\ref{90_90_B}).
+\textbf{Only empathy}: we first look at the resulting behavior when both agents just receive intrinsic reward for empathy ($\alpha=0.9$, $\beta=0$). As a result, at the beginning agents were attracted by Nash equilibrium. Then, while they were expressing their intentions, in average they defected as much as they cooperated. After this expressing phase, agent could better understand each other's intentions (see table~\ref{R_90_90_B}) and, led by intrinsic reward for empathy, they started to always cooperate (see figure~\ref{90_90_B}).
 \begin{table}[h]
 	\centering
-	\label{R_90_90_B}
 	\begin{tabular}{|c|c|c|c|c|} \hline
 		&$\mathcal{T}$&$\mathcal{R}$&$\mathcal{P}$&$\mathcal{S}$\\ \hline
 		Truth & \cellcolor{yellow!30}1 & \cellcolor{yellow!30}0.6 & 0 & -1\\ \hline \hline
@@ -469,21 +470,21 @@ In our simulations, at the beginning (while $t<300$) both agents are following Q
 		$\sigma^2$ & \cellcolor{yellow!30}9.3e-02&   \cellcolor{yellow!30}4.6e-10 &  9.5e-02 &  9.3e-02\\ \hline
 	\end{tabular}
 	\caption{\textcolor{red}{$\alpha=0.9$, $\beta = 0$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. Agents could learn each other's intentions and understood that $\mathcal{T}$ and $\mathcal{R}$ are positive rewards for the other. As they finally always cooperated (because of empathy), they estimated other's rewards higher for $\mathcal{R}$ than for $\mathcal{T}$(see yellow cells).}
+	\label{R_90_90_B}
 \end{table}
 
 \begin{figure}[h]
 	\centering
-	\label{90_90_B}
 	\includegraphics[width=.9\linewidth]{90_90_B}
 	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior.}
+	\label{90_90_B}
 	%\vskip -6pt
 \end{figure}
 
-\textbf{Only Gratitude}: this time both agents just receive intrinsic reward for gratitude ($\alpha=0.$, $\beta=0.9$). As a result, at the beginning agents are attracted by Nash equilibrium. Then, while they were expressing their intentions, they defected as much as they cooperated in average. After this expressing phase, agent could not understand each other's intentions (see table~\ref{R_09_09_B}) and although led by gratitude, they started to always defect (see figure~\ref{09_09_B}).
+\textbf{Only Gratitude}: this time both agents just receive intrinsic reward for gratitude ($\alpha=0.$, $\beta=0.9$). As a result, at the beginning agents were attracted by Nash equilibrium. Then, while they were expressing their intentions, they defected as much as they cooperated in average. After this expressing phase, agent could not understand each other's intentions (see table~\ref{R_09_09_B}) and although led by gratitude, they started to always defect (see figure~\ref{09_09_B}).
 
 \begin{table}[h]
 	\centering
-	\label{R_09_09_B}
 	\begin{tabular}{|c|c|c|c|c|} \hline
 		&$\mathcal{T}$&$\mathcal{R}$&$\mathcal{P}$&$\mathcal{S}$\\ \hline
 		Truth & 1 & 0.6 & \cellcolor{yellow!30}0 & -1\\ \hline \hline
@@ -493,22 +494,22 @@ In our simulations, at the beginning (while $t<300$) both agents are following Q
 		$\sigma^2$ &  0.034 & 0.095 & \cellcolor{yellow!30}8.5e-4  & 0.034\\ \hline
 	\end{tabular}
 	\caption{\textcolor{red}{$\alpha=0$, $\beta = 0.9$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null (see yellow cells)}
+	\label{R_09_09_B}
 \end{table}
 
 
 \begin{figure}[h]
 	\centering
-	\label{09_09_B}
 	\includegraphics[width=.9\linewidth]{09_09_B}
 	\caption{\textcolor{red}{$\alpha=0$, $\beta=0.9$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior.}
+	\label{09_09_B}
 	%\vskip -6pt
 \end{figure}
 
-\textbf{Empathy and gratitude}: Finally we look at the resulting behavior when both agents receive intrinsic rewards for both empathy and gratitude ($\alpha=0.9$, $\beta=0.3$). As in only-empathy condition, agents successfully understood each other's intentions (see table~\ref{R_99_99_B}). But adding the intrinsic reward for gratitude sped up the cooperation after the expressing-intention phase, increasing the probability of double cooperation (see figure~\ref{99_99_B}).
+\textbf{Empathy and gratitude}: Finally we look at the resulting behavior when both agents receive intrinsic rewards for both empathy and gratitude ($\alpha=0.9$, $\beta=0.3$). Like in only-empathy condition, agents successfully understood each other's intentions (see table~\ref{R_99_99_B}). But adding the intrinsic reward for gratitude sped up the cooperation after the expressing-intention phase, increasing the frequency of double cooperation (see figure~\ref{99_99_B}).
 
 \begin{table}[h]
 	\centering
-	\label{R_99_99_B}
 	\begin{tabular}{|c|c|c|c|c|} \hline
 		&$\mathcal{T}$&$\mathcal{R}$&$\mathcal{P}$&$\mathcal{S}$\\ \hline
 		Truth & \cellcolor{yellow!30}1 & \cellcolor{yellow!30}0.6 & 0 & -1\\ \hline \hline
@@ -518,34 +519,35 @@ In our simulations, at the beginning (while $t<300$) both agents are following Q
 		$\sigma^2$ &  \cellcolor{yellow!30}7.7e-02 &  \cellcolor{yellow!30}1.9e-17  & 2.2e-02  & 7.4e-02\\ \hline
 	\end{tabular}
 	\caption{\textcolor{red}{$\alpha=0.9$, $\beta = 0.3$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. Agents could learn each other's intentions and understood that $\mathcal{T}$ and $\mathcal{R}$ are positive rewards for the other. As they finally always cooperated (because of empathy), they estimated other's rewards higher for $\mathcal{R}$ than for $\mathcal{T}$(see yellow cells).}
+	\label{R_99_99_B}
 \end{table}
 
 \begin{figure}[h]
 	\centering
-	\label{99_99_B}
 	\includegraphics[width=.9\linewidth]{99_99_B}
 	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0.3$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior.}
+	\label{99_99_B}
 	%\vskip -6pt
 \end{figure}
 
 
 \subsection{Playing with empathy}
 
-Regarding results of subsection~\ref{63} it appears that with expressing-intention phase, the empathy is a necessary and sufficient condition to reach cooperation, while gratitude added to empathy stabilizes this cooperation. This is why we finally focused just on empathy in order to explore all possible combination of the $\alpha$ parameters of both agents ($\alpha_1$ for agent 1, $\alpha_2$ for agent 2). For that, we divided the area of possible values in a grid of 20 values between -1 and 1 for both parameters $\alpha$. We simulated 10 IDP games with an expressing intention phase for each of the 400 resulting combinations. We display the average final defect-cooperate ratio (the same measure used for all figure in the previous subsection) on a map reported in figure~\ref{alphamap}. We can see that cooperation only occurs when both agents have an higher enough intrinsic reward for empathy ($\alpha>\sim 0.5$ in this case). Interestingly, at the edge between cooperation and Nash equilibrium's defection, appears a balanced zone, where agents equally defect or cooperate (see green area on figure~\ref{alphamap}).
+Regarding results of subsection~\ref{63} it appears that with expressing-intention phases, empathy is a necessary and sufficient condition to reach cooperation, while gratitude added to empathy stabilizes this cooperation. This is why we finally focused just on empathy in order to explore all possible combination of the $\alpha$ parameters of both agents ($\alpha_1$ for agent 1, $\alpha_2$ for agent 2). For that, we divided the area of possible values in a grid of 20 values between -1 and 1 for both parameters $\alpha$. We simulated 10 IDP games with an expressing intention phase for each of the 400 resulting combinations. We displayed the average final defect-cooperate ratio (the same measure used for all figure in the previous subsection) on a map reported in figure~\ref{alphamap}. We can see that cooperation only occurs when both agents have an higher enough intrinsic reward for empathy ($\alpha>\sim 0.5$ in this case). Interestingly, at the edge between cooperations and Nash equilibrium's defections, appears a balanced zone, where agents equally defect or cooperate (see green area on figure~\ref{alphamap}).
 
 \begin{figure}[h]
 	\centering
-	\label{alphamap}
 	\includegraphics[width=.9\linewidth]{alphamap}
 	\caption{Average final defect-cooperate ratio over 10 IDP games for a grid of 400 possible ($\alpha_1$, $\alpha_2$) combinations. In each game, agents were following expressing-intention behavior between time $t=301$ and $t=700$. Red areas correspond to combinations that led to cooperation while blue areas correspond to combinations that led to Nash equilibrium. In green areas, agents where equally defecting and cooperating.}
+	\label{alphamap}
 	%\vskip -6pt
 \end{figure}
 
 \section{Conclusion}
 
-Cooperation in IPD game is said to be irrational. Regarding animals and humans behaviors, we can however observe quantities of such irrational behavior emerging out of a stressful word, such as friendship or love. Models of natural selection brought global explanations of these emergences, but the detailed causes and mechanisms leading to such complex abilities in animals remain unknown. We strongly believe that any social behavior springs up in such conditions it was rational to behave that way. With this work, we claim that cooperation is no more irrational when agents can express and understand each others intentions. 
+Cooperation in IPD game is said to be irrational. Regarding animals and humans behaviors, we can however observe quantities of such irrational behaviors emerging out of a stressful word, such as friendship or love. Models of natural selection brought global explanations of these emergences, but the detailed causes and mechanisms leading to such complex abilities in animals remain unknown. We strongly believe that any social behavior springs up in such conditions it was rational to behave that way. With this work, we claim that cooperation is no more irrational when agents can express and understand each others intentions. 
 
-We introduce a cognitive architecture enabling second order of theory of mind for social agents. This architecture is not recursive in the sens that each agent develop models for itself, the other or itself perceived by the other and none of these models recursively enable theory of mind. Agents model themselves as RL-agents and use IRL to model others or themselves seen by others. In this framework, it is possible to design a decision making algorithm aiming to enable agents to express each others intentions. We add two intrinsic rewards based on empathy and gratitude, empathy being the ability to feel others rewards while gratitude is to feel how others would estimate agents own rewards. Through an 2-agents system based on IPD game, we show that when agents can express their intentions, the intrinsic reward for empathy is a necessary and sufficient condition to promote cooperation, while gratitude added to empathy seems to speed up and stabilize this cooperation. 
+We introduce a cognitive architecture enabling second order of theory of mind for social agents. This architecture is not recursive in the sens that each agent develop models for itself, others or itself perceived by others and none of these models enable theory of mind. Agents are modeled as RL-agents and use IRL to model others or themselves seen by others. In this framework, it is possible to design a decision making algorithm aiming to enable agents to express each others intentions. We add two intrinsic rewards based on empathy and gratitude, empathy being the ability to feel others rewards while gratitude is to feel how others would estimate agents own rewards. Through an 2-agents system based on IPD game, we show that when agents can express their intentions, the intrinsic reward for empathy is a necessary and sufficient condition to promote cooperation, while gratitude added to empathy seems to speed up and stabilize this cooperation. 
 
 We make the assumption that our algorithm used to express intentions could also work with humans and hence improve Human-Robot interactions, especially in cooperative tasks. We finally invite readers of this work to explore the huge area of possibilities opened by this framework, by trying different learning approaches, intrinsic rewards and multi-agent scenarios. 
 
