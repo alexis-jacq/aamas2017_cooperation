@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  14 NOV 2016 19:11
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  15 NOV 2016 12:58
  restricted \write18 enabled.
 **aamas2017_sample.tex
 (./aamas2017_sample.tex
@@ -386,23 +386,21 @@ LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
 
 Excluding 'CCSXML' comment.
-Overfull \hbox (1.6993pt too wide) in paragraph at lines 230--231
-\T1/aer/m/n/9 for-mances in a range of sim-ple so-cial games [14][5][22][6][7][
+Overfull \hbox (1.6993pt too wide) in paragraph at lines 226--227
+\T1/aer/m/n/9 for-mances in a range of sim-ple so-cial games [13][5][21][6][7][
 8].
  []
 
 
-Overfull \hbox (15.97267pt too wide) in paragraph at lines 232--233
-\T1/aer/m/n/9 der of mod-el-ing. In con-trast with pre-vi-ous ap-proaches [14][
-6][18],
+Overfull \hbox (15.97267pt too wide) in paragraph at lines 228--229
+\T1/aer/m/n/9 der of mod-el-ing. In con-trast with pre-vi-ous ap-proaches [13][
+6][17],
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 Missing character: There is no ’ (U+2019) in font aer9!
@@ -433,6 +431,9 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 351.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [3]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package epstopdf Info: Source file: <00_00_Q.eps>
 (epstopdf)                    date: 2016-11-13 11:20:18
 (epstopdf)                    size: 35265 bytes
@@ -443,13 +444,15 @@ Package epstopdf Info: Source file: <00_00_Q.eps>
 f 00_00_Q.eps>
 (epstopdf)             \includegraphics on input line 398.
 Package epstopdf Info: Output file is already uptodate.
-
 <00_00_Q-eps-converted-to.pdf, id=31, 578.16pt x 433.62pt>
 File: 00_00_Q-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 00_00_Q-eps-converted-to.pdf>
 Package pdftex.def Info: 00_00_Q-eps-converted-to.pdf used on input line 398.
 (pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -503,7 +506,8 @@ Overfull \hbox (8.00198pt too wide) in paragraph at lines 454--454
  []
 
 [4<./00_00_Q-eps-converted-to.pdf>]
-Underfull \vbox (badness 1715) has occurred while \output is active []
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package epstopdf Info: Source file: <90_90_B.eps>
 (epstopdf)                    date: 2016-11-13 11:11:27
@@ -515,7 +519,6 @@ Package epstopdf Info: Source file: <90_90_B.eps>
 f 90_90_B.eps>
 (epstopdf)             \includegraphics on input line 477.
 Package epstopdf Info: Output file is already uptodate.
-
 <90_90_B-eps-converted-to.pdf, id=53, 578.16pt x 433.62pt>
 File: 90_90_B-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -526,7 +529,9 @@ Package pdftex.def Info: 90_90_B-eps-converted-to.pdf used on input line 477.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5<./90_90_Q-eps-converted-to.pdf><./m9_m3_Q-eps-converted-to.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package epstopdf Info: Source file: <09_09_B.eps>
 (epstopdf)                    date: 2016-11-13 11:27:52
 (epstopdf)                    size: 37302 bytes
@@ -537,8 +542,7 @@ Package epstopdf Info: Source file: <09_09_B.eps>
 f 09_09_B.eps>
 (epstopdf)             \includegraphics on input line 502.
 Package epstopdf Info: Output file is already uptodate.
-
-<09_09_B-eps-converted-to.pdf, id=89, 578.16pt x 433.62pt>
+<09_09_B-eps-converted-to.pdf, id=54, 578.16pt x 433.62pt>
 File: 09_09_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 09_09_B-eps-converted-to.pdf>
@@ -561,7 +565,7 @@ Package epstopdf Info: Source file: <99_99_B.eps>
 f 99_99_B.eps>
 (epstopdf)             \includegraphics on input line 526.
 Package epstopdf Info: Output file is already uptodate.
-<99_99_B-eps-converted-to.pdf, id=90, 578.16pt x 433.62pt>
+<99_99_B-eps-converted-to.pdf, id=55, 578.16pt x 433.62pt>
 File: 99_99_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 99_99_B-eps-converted-to.pdf>
@@ -571,6 +575,7 @@ Package pdftex.def Info: 99_99_B-eps-converted-to.pdf used on input line 526.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[5<./90_90_Q-eps-converted-to.pdf><./m9_m3_Q-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <alphamap.eps>
 (epstopdf)                    date: 2016-11-14 00:39:34
 (epstopdf)                    size: 32870 bytes
@@ -581,6 +586,7 @@ Package epstopdf Info: Source file: <alphamap.eps>
 df alphamap.eps>
 (epstopdf)             \includegraphics on input line 539.
 Package epstopdf Info: Output file is already uptodate.
+
 <alphamap-eps-converted-to.pdf, id=91, 578.16pt x 433.62pt>
 File: alphamap-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -591,12 +597,19 @@ Package pdftex.def Info: alphamap-eps-converted-to.pdf used on input line 539.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./aamas2017_sample.bbl [6<./90_90_B-eps-converted-to.pdf><./09_09_B-eps-convert
-ed-to.pdf>]) [7
-Missing character: There is no ’ (U+2019) in font aer9!
-<./99_99_B-eps-converted-to.pdf><./alphamap-eps-converted-to.pdf>] [8
+[6<./90_90_B-eps-converted-to.pdf><./09_09_B-eps-converted-to.pdf>]
+(./aamas2017_sample.bbl
+Underfull \vbox (badness 4303) has occurred while \output is active []
 
-] (./aamas2017_sample.aux)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7
+Missing character: There is no ’ (U+2019) in font aer9!
+<./99_99_B-eps-converted-to.pdf><./alphamap-eps-converted-to.pdf>]) [8
+
+]
+(./aamas2017_sample.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -607,14 +620,14 @@ LaTeX Warning: There were multiply-defined labels.
 ### bottom level
 
 Here is how much of LuaTeX's memory you used:
- 4991 strings out of 495004
+ 4990 strings out of 495004
  100000,154059 words of node,token memory allocated
- 529 words of node memory still in use:
+ 531 words of node memory still in use:
    6 hlist, 2 vlist, 3 rule, 2 glue, 1 kern, 64 glue_spec, 1 write nodes
-   avail lists: 2:24,3:244,4:2617,5:560,6:6173,7:358,9:601,10:536
- 8044 multiletter control sequences out of 65536+600000
+   avail lists: 2:24,3:259,4:3796,5:817,6:7132,7:556,9:593,10:649
+ 8043 multiletter control sequences out of 65536+600000
  106 fonts using 4173835 bytes
- 41i,21n,35p,1664b,2002s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 41i,21n,35p,1665b,2002s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<</usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><</usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><</usr/share/texlive/texmf-dis
@@ -633,7 +646,7 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><</usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvb8a.pfb><</usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb><</usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb><</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on aamas2017_sample.pdf (8 pages, 333926 bytes).
+Output written on aamas2017_sample.pdf (8 pages, 335782 bytes).
 
 PDF statistics: 224 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams
