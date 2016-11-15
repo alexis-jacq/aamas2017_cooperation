@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  15 NOV 2016 19:57
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  15 NOV 2016 22:49
  restricted \write18 enabled.
 **aamas2017_sample.tex
 (./aamas2017_sample.tex
@@ -425,21 +425,21 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package epstopdf Info: Source file: <00_00_Q.eps>
-(epstopdf)                    date: 2016-11-13 11:20:18
-(epstopdf)                    size: 35265 bytes
+(epstopdf)                    date: 2016-11-15 22:37:57
+(epstopdf)                    size: 55955 bytes
 (epstopdf)             Output file: <00_00_Q-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-13 12:04:06
-(epstopdf)                    size: 15815 bytes
+(epstopdf)                    date: 2016-11-15 22:38:58
+(epstopdf)                    size: 21044 bytes
 (epstopdf)             Command: <repstopdf --outfile=00_00_Q-eps-converted-to.pd
 f 00_00_Q.eps>
 (epstopdf)             \includegraphics on input line 398.
 Package epstopdf Info: Output file is already uptodate.
-<00_00_Q-eps-converted-to.pdf, id=31, 578.16pt x 433.62pt>
+<00_00_Q-eps-converted-to.pdf, id=31, 582.175pt x 444.66125pt>
 File: 00_00_Q-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 00_00_Q-eps-converted-to.pdf>
 Package pdftex.def Info: 00_00_Q-eps-converted-to.pdf used on input line 398.
-(pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
+(pdftex.def)             Requested size: 215.99854pt x 164.97667pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -448,21 +448,21 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package epstopdf Info: Source file: <90_90_Q.eps>
-(epstopdf)                    date: 2016-11-13 11:23:36
-(epstopdf)                    size: 16914 bytes
+(epstopdf)                    date: 2016-11-15 22:15:23
+(epstopdf)                    size: 39885 bytes
 (epstopdf)             Output file: <90_90_Q-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-13 12:04:06
-(epstopdf)                    size: 9507 bytes
+(epstopdf)                    date: 2016-11-15 22:38:59
+(epstopdf)                    size: 15248 bytes
 (epstopdf)             Command: <repstopdf --outfile=90_90_Q-eps-converted-to.pd
 f 90_90_Q.eps>
 (epstopdf)             \includegraphics on input line 424.
 Package epstopdf Info: Output file is already uptodate.
-<90_90_Q-eps-converted-to.pdf, id=32, 578.16pt x 433.62pt>
+<90_90_Q-eps-converted-to.pdf, id=32, 580.1675pt x 445.665pt>
 File: 90_90_Q-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 90_90_Q-eps-converted-to.pdf>
 Package pdftex.def Info: 90_90_Q-eps-converted-to.pdf used on input line 424.
-(pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
+(pdftex.def)             Requested size: 215.99854pt x 165.9203pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -471,21 +471,21 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package epstopdf Info: Source file: <m9_m3_Q.eps>
-(epstopdf)                    date: 2016-11-13 11:53:25
-(epstopdf)                    size: 47254 bytes
+(epstopdf)                    date: 2016-11-15 22:11:14
+(epstopdf)                    size: 66675 bytes
 (epstopdf)             Output file: <m9_m3_Q-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-13 12:16:30
-(epstopdf)                    size: 18982 bytes
+(epstopdf)                    date: 2016-11-15 22:38:59
+(epstopdf)                    size: 24048 bytes
 (epstopdf)             Command: <repstopdf --outfile=m9_m3_Q-eps-converted-to.pd
 f m9_m3_Q.eps>
 (epstopdf)             \includegraphics on input line 449.
 Package epstopdf Info: Output file is already uptodate.
-<m9_m3_Q-eps-converted-to.pdf, id=33, 578.16pt x 433.62pt>
+<m9_m3_Q-eps-converted-to.pdf, id=33, 578.16pt x 440.64626pt>
 File: m9_m3_Q-eps-converted-to.pdf Graphic file (type pdf)
 
 <use m9_m3_Q-eps-converted-to.pdf>
 Package pdftex.def Info: m9_m3_Q-eps-converted-to.pdf used on input line 449.
-(pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
+(pdftex.def)             Requested size: 215.99854pt x 164.62335pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -496,25 +496,28 @@ Overfull \hbox (8.00198pt too wide) in paragraph at lines 456--456
  []
 
 [4<./00_00_Q-eps-converted-to.pdf>]
+Underfull \vbox (badness 1377) has occurred while \output is active []
+
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package epstopdf Info: Source file: <90_90_B.eps>
-(epstopdf)                    date: 2016-11-13 11:11:27
-(epstopdf)                    size: 44905 bytes
+(epstopdf)                    date: 2016-11-15 22:16:13
+(epstopdf)                    size: 64219 bytes
 (epstopdf)             Output file: <90_90_B-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-13 12:12:37
-(epstopdf)                    size: 18381 bytes
+(epstopdf)                    date: 2016-11-15 22:38:59
+(epstopdf)                    size: 23645 bytes
 (epstopdf)             Command: <repstopdf --outfile=90_90_B-eps-converted-to.pd
 f 90_90_B.eps>
 (epstopdf)             \includegraphics on input line 478.
 Package epstopdf Info: Output file is already uptodate.
-<90_90_B-eps-converted-to.pdf, id=53, 578.16pt x 433.62pt>
+<90_90_B-eps-converted-to.pdf, id=52, 581.17125pt x 444.66125pt>
 File: 90_90_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 90_90_B-eps-converted-to.pdf>
 Package pdftex.def Info: 90_90_B-eps-converted-to.pdf used on input line 478.
-(pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
+(pdftex.def)             Requested size: 215.99854pt x 165.26164pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -523,95 +526,86 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package epstopdf Info: Source file: <09_09_B.eps>
-(epstopdf)                    date: 2016-11-13 11:27:52
-(epstopdf)                    size: 37302 bytes
+(epstopdf)                    date: 2016-11-15 22:14:28
+(epstopdf)                    size: 57890 bytes
 (epstopdf)             Output file: <09_09_B-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-13 12:11:18
-(epstopdf)                    size: 15878 bytes
+(epstopdf)                    date: 2016-11-15 22:38:59
+(epstopdf)                    size: 21307 bytes
 (epstopdf)             Command: <repstopdf --outfile=09_09_B-eps-converted-to.pd
 f 09_09_B.eps>
 (epstopdf)             \includegraphics on input line 503.
 Package epstopdf Info: Output file is already uptodate.
-<09_09_B-eps-converted-to.pdf, id=54, 578.16pt x 433.62pt>
+<09_09_B-eps-converted-to.pdf, id=53, 581.17125pt x 444.66125pt>
 File: 09_09_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 09_09_B-eps-converted-to.pdf>
 Package pdftex.def Info: 09_09_B-eps-converted-to.pdf used on input line 503.
-(pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package epstopdf Info: Source file: <99_99_B.eps>
-(epstopdf)                    date: 2016-11-13 11:30:49
-(epstopdf)                    size: 35971 bytes
-(epstopdf)             Output file: <99_99_B-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-13 12:13:56
-(epstopdf)                    size: 15499 bytes
-(epstopdf)             Command: <repstopdf --outfile=99_99_B-eps-converted-to.pd
-f 99_99_B.eps>
-(epstopdf)             \includegraphics on input line 527.
-Package epstopdf Info: Output file is already uptodate.
-<99_99_B-eps-converted-to.pdf, id=55, 578.16pt x 433.62pt>
-File: 99_99_B-eps-converted-to.pdf Graphic file (type pdf)
-
-<use 99_99_B-eps-converted-to.pdf>
-Package pdftex.def Info: 99_99_B-eps-converted-to.pdf used on input line 527.
-(pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
+(pdftex.def)             Requested size: 215.99854pt x 165.26164pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5<./90_90_Q-eps-converted-to.pdf><./m9_m3_Q-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <alphamap.eps>
-(epstopdf)                    date: 2016-11-14 00:39:34
-(epstopdf)                    size: 32870 bytes
-(epstopdf)             Output file: <alphamap-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-14 00:39:43
-(epstopdf)                    size: 17012 bytes
-(epstopdf)             Command: <repstopdf --outfile=alphamap-eps-converted-to.p
-df alphamap.eps>
-(epstopdf)             \includegraphics on input line 540.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package epstopdf Info: Source file: <99_99_B.eps>
+(epstopdf)                    date: 2016-11-15 22:13:28
+(epstopdf)                    size: 56531 bytes
+(epstopdf)             Output file: <99_99_B-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-15 22:38:59
+(epstopdf)                    size: 20887 bytes
+(epstopdf)             Command: <repstopdf --outfile=99_99_B-eps-converted-to.pd
+f 99_99_B.eps>
+(epstopdf)             \includegraphics on input line 527.
 Package epstopdf Info: Output file is already uptodate.
+<99_99_B-eps-converted-to.pdf, id=87, 579.16376pt x 445.665pt>
+File: 99_99_B-eps-converted-to.pdf Graphic file (type pdf)
 
-<alphamap-eps-converted-to.pdf, id=91, 578.16pt x 433.62pt>
-File: alphamap-eps-converted-to.pdf Graphic file (type pdf)
-
-<use alphamap-eps-converted-to.pdf>
-Package pdftex.def Info: alphamap-eps-converted-to.pdf used on input line 540.
-(pdftex.def)             Requested size: 215.99854pt x 161.99838pt.
+<use 99_99_B-eps-converted-to.pdf>
+Package pdftex.def Info: 99_99_B-eps-converted-to.pdf used on input line 527.
+(pdftex.def)             Requested size: 215.99854pt x 166.20592pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6<./90_90_B-eps-converted-to.pdf><./09_09_B-eps-converted-to.pdf>]
-(./aamas2017_sample.bbl
-Underfull \vbox (badness 4303) has occurred while \output is active []
+Package epstopdf Info: Source file: <alphamap.eps>
+(epstopdf)                    date: 2016-11-15 22:40:56
+(epstopdf)                    size: 26794 bytes
+(epstopdf)             Output file: <alphamap-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-15 22:41:03
+(epstopdf)                    size: 17678 bytes
+(epstopdf)             Command: <repstopdf --outfile=alphamap-eps-converted-to.p
+df alphamap.eps>
+(epstopdf)             \includegraphics on input line 540.
+Package epstopdf Info: Output file is already uptodate.
+<alphamap-eps-converted-to.pdf, id=88, 596.2275pt x 455.7025pt>
+File: alphamap-eps-converted-to.pdf Graphic file (type pdf)
+
+<use alphamap-eps-converted-to.pdf>
+Package pdftex.def Info: alphamap-eps-converted-to.pdf used on input line 540.
+(pdftex.def)             Requested size: 215.99854pt x 165.08882pt.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- [7
+[6<./90_90_B-eps-converted-to.pdf>] (./aamas2017_sample.bbl [7
 Missing character: There is no ’ (U+2019) in font aer9!
-<./99_99_B-eps-converted-to.pdf><./alphamap-eps-converted-to.pdf>]) [8
+<./09_09_B-eps-converted-to.pdf><./99_99_B-eps-converted-to.pdf>]) [8
 
-]
-(./aamas2017_sample.aux))
+<./alphamap-eps-converted-to.pdf>] (./aamas2017_sample.aux))
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level
 
 Here is how much of LuaTeX's memory you used:
- 4993 strings out of 495004
+ 4994 strings out of 495004
  100000,154059 words of node,token memory allocated
- 531 words of node memory still in use:
+ 532 words of node memory still in use:
    6 hlist, 2 vlist, 3 rule, 2 glue, 1 kern, 64 glue_spec, 1 write nodes
-   avail lists: 2:24,3:258,4:3802,5:822,6:7132,7:573,9:601,10:647
- 8046 multiletter control sequences out of 65536+600000
+   avail lists: 2:24,3:259,4:3551,5:767,6:6907,7:537,9:601,10:630
+ 8047 multiletter control sequences out of 65536+600000
  106 fonts using 4173835 bytes
  41i,21n,35p,1643b,2002s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<</usr/share/texlive/
@@ -632,10 +626,10 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><</usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvb8a.pfb><</usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb><</usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb><</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on aamas2017_sample.pdf (8 pages, 337112 bytes).
+Output written on aamas2017_sample.pdf (8 pages, 367047 bytes).
 
-PDF statistics: 224 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
+PDF statistics: 215 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

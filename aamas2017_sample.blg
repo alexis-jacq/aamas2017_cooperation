@@ -5,45 +5,45 @@ The style file: abbrv.bst
 Database file #1: biblio.bib
 Warning--empty journal in puterman1994
 Warning--empty booktitle in sequeira14
-You've used 21 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            627 strings with 7288 characters,
-and the built_in function-call counts, 8033 in all, are:
-= -- 824
-> -- 309
+            634 strings with 7524 characters,
+and the built_in function-call counts, 8410 in all, are:
+= -- 861
+> -- 332
 < -- 11
-+ -- 124
-- -- 100
-* -- 522
-:= -- 1242
-add.period$ -- 65
-call.type$ -- 21
-change.case$ -- 111
++ -- 133
+- -- 108
+* -- 555
+:= -- 1307
+add.period$ -- 68
+call.type$ -- 22
+change.case$ -- 118
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 338
-empty$ -- 656
-format.name$ -- 100
-if$ -- 1751
+cite$ -- 24
+duplicate$ -- 349
+empty$ -- 681
+format.name$ -- 108
+if$ -- 1825
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 22
-newline$ -- 108
-num.names$ -- 42
-pop$ -- 126
+int.to.str$ -- 22
+missing$ -- 23
+newline$ -- 113
+num.names$ -- 44
+pop$ -- 131
 preamble$ -- 1
-purify$ -- 91
+purify$ -- 97
 quote$ -- 0
-skip$ -- 269
+skip$ -- 276
 stack$ -- 0
-substring$ -- 609
-swap$ -- 111
+substring$ -- 633
+swap$ -- 112
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 82
+type$ -- 86
 warning$ -- 2
-while$ -- 87
-width$ -- 23
-write$ -- 231
+while$ -- 91
+width$ -- 24
+write$ -- 242
 (There were 2 warnings)

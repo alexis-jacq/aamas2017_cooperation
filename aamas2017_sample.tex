@@ -217,7 +217,7 @@ Solving situations of misunderstanding requires two abilities: to build a cohere
 
 \section{Introduction}
 
-In any interaction that requires cooperation agents need to understand each others intentions. A common ground \cite{clark1996using}, for instance a spoken language -- or even a gestural language, helps to reach such mutual understanding \cite{palagi2008sharing}\cite{knoblich2008evolving}. Without any such ground, agents can still analyse their respective motivations through their goal-directed behaviors in order to cooperate or intentionally defect, as observed in monkeys \cite{haroush2015neuronal}. Moreover, they can adapt their behavior in order to be more easily understood. We investigate in this paper a cognitive architecture enabling virtual agents of such analysis. 
+In any interaction that requires cooperation, agents need to understand each others intentions. A common ground \cite{clark1996using}, for instance a spoken language -- or even a gestural language, helps to reach such mutual understanding \cite{palagi2008sharing}\cite{knoblich2008evolving}. Without any such ground, agents can still analyse their respective motivations through their goal-directed behaviors in order to cooperate or intentionally defect, as observed in monkeys \cite{haroush2015neuronal}. Moreover, they can adapt their behavior in order to be more easily understood. We investigate in this paper a cognitive architecture enabling virtual agents of such analysis. 
 
 As humans, even without any common language, we still use gestures and facial expressions to communicate our intentions. But it start to be difficult when we try to interact and share intentions with animals. We meet the same problem in Human-Robot interactions, where humans facial expressions are not always understood by machines. It is even more difficult for robots to share their intentions without straightforward verbal explanations since they can not always express facial signals. In such cases, being able to express intentions through non-communicative actions (e.g. exaggerating a behavior) could infuse machines with stronger illusions of life. 
 
@@ -336,7 +336,7 @@ That way we enable agents to help each others in inferring their reward function
 
 \section{Empathy and gratitude}
 
-We finally provide our agents with intrinsic rewards (ref intrinsic motivation) that depend on how they estimate the rewards of other agents. We define two different intrinsic rewards that agents can feel observing each others:
+We finally provide our agents with intrinsic rewards \cite{singh2010intrinsically} that depend on how they estimate the rewards of other agents. We define two different intrinsic rewards that agents can feel observing each others:
 
 \textbf{Empathy} $e^t_{i:j}$ of an agent $i$ observing an agent $j$ at a time $t$ is proportional to its estimation of the reward that $j$ received:
 $$e^t_{i:j} \propto \hat R_{i:j}(o^t_j)$$
@@ -389,14 +389,14 @@ We first tried to let our agents behaving without expressing intentions and with
 		$\hat R_{2:1}$ & 0.25 &-0.16&  \cellcolor{yellow!30}0.92& -0.77\\ \hline
 		$\sigma^2$ & 0.36&  0.46 & \cellcolor{yellow!30}0.15 &  0.094\\ \hline
 	\end{tabular}
-	\caption{\textcolor{red}{$\alpha=0$, $\beta=0$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null (see yellow cells).}
+	\caption{\textcolor{red}{$\alpha=0$, $\beta=0$}. Average learned other's reward function by agents 1 and 2 over 50 IPD games and variances. We can see that with small variances agents successfully learned that the other has negative reward $\mathcal{S}$, but since the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that was, in fact, null (see yellow cells).}
 	\label{R_00_00_Q}
 \end{table} 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{00_00_Q}
-	\caption{\textcolor{red}{$\alpha=0$, $\beta=0$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}
+	\caption{\textcolor{red}{$\alpha=0$, $\beta=0$}. (blue) Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represents a full cooperation (both agents cooperate) and -1 represents a full defection (both agents defect). The trajectory is computed with an exponential moving average of this ratio. (red) +/- standard deviation.}
 	\label{00_00_Q}
 	%\vskip -6pt
 \end{figure}
@@ -415,14 +415,14 @@ We first tried to let our agents behaving without expressing intentions and with
 		$\hat R_{2:1}$ & 0.56&  \cellcolor{yellow!30}-0.32 & \cellcolor{yellow!30}0.99& -0.62\\ \hline
 		$\sigma^2$ & 1.6e-01  &  \cellcolor{yellow!30}2.5e-01  & \cellcolor{yellow!30}7.7e-08 &  9.6e-02\\ \hline
 	\end{tabular}
-	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0.3$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null. Furthermore, as they also learned that the other is punished while they both cooperate and receive reward $\mathcal{R}$ (see yellow cells).}
+	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0.3$}. Average learned other's reward function by agents 1 and 2 over 50 IPD games and variances. We can see that with small variances agents successfully learned that the other has negative reward $\mathcal{S}$, but since the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that was, in fact, null. Furthermore, they also learned that the other was punished while they were both cooperating and receiving reward $\mathcal{R}$ (see yellow cells).}
 	\label{R_90_90_Q}
 \end{table}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{90_90_Q}
-	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0.3$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}
+	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0.3$}. (blue) Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represents a full cooperation (both agents cooperate) and -1 represents a full defection (both agents defect). The trajectory is computed with an exponential moving average of this ratio. (red) +/- standard deviation.}
 	\label{90_90_Q}
 	%\vskip -6pt
 \end{figure}
@@ -440,14 +440,14 @@ We first tried to let our agents behaving without expressing intentions and with
 		$\hat R_{2:1}$ & 0.65 &-0.16&\cellcolor{yellow!30} 0.55 & -0.37\\ \hline
 		$\sigma^2$ & 0.14 & 0.16 & \cellcolor{yellow!30}0.15  &  0.083\\ \hline
 	\end{tabular}
-	\caption{\textcolor{red}{$\alpha=-0.9$, $\beta = -0.3$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null (see yellow cells).}
+	\caption{\textcolor{red}{$\alpha=-0.9$, $\beta = -0.3$}. Average learned other's reward function by agents 1 and 2 over 50 IPD games and variances. We can see that with small variances agents successfully learned that the other has negative reward $\mathcal{S}$, but since the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that was, in fact, null (see yellow cells).}
 	\label{R_m9_m9_Q}
 \end{table}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{m9_m3_Q}
-	\caption{\textcolor{red}{$\alpha=-0.9$, $\beta=-0.3$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio.}
+	\caption{\textcolor{red}{$\alpha=-0.9$, $\beta=-0.3$}. (blue) Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represents a full cooperation (both agents cooperate) and -1 represents a full defection (both agents defect). The trajectory is computed with an exponential moving average of this ratio. (red) +/- standard deviation.}
 	\label{m9_m9_Q}
 	%\vskip -6pt
 \end{figure}
@@ -469,14 +469,14 @@ In our simulations, at the beginning (from $t=0$ up to $t=300$) both agents are 
 		$\hat R_{2:1}$ & \cellcolor{yellow!30}0.54 & \cellcolor{yellow!30}0.99& -0.88& -0.72\\ \hline
 		$\sigma^2$ & \cellcolor{yellow!30}9.3e-02&   \cellcolor{yellow!30}4.6e-10 &  9.5e-02 &  9.3e-02\\ \hline
 	\end{tabular}
-	\caption{\textcolor{red}{$\alpha=0.9$, $\beta = 0$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. Agents could learn each other's intentions and understood that $\mathcal{T}$ and $\mathcal{R}$ are positive rewards for the other. As they finally always cooperated (because of empathy), they estimated other's rewards higher for $\mathcal{R}$ than for $\mathcal{T}$(see yellow cells).}
+	\caption{\textcolor{red}{$\alpha=0.9$, $\beta = 0$}. Average learned other's reward function by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. Agents could learn each other's intentions and understood that $\mathcal{T}$ and $\mathcal{R}$ are positive rewards for the other. As they finally always cooperated (because of empathy), they estimated other's rewards higher for $\mathcal{R}$ than for $\mathcal{T}$(see yellow cells).}
 	\label{R_90_90_B}
 \end{table}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{90_90_B}
-	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior.}
+	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0$}. (blue) Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represents a full cooperation (both agents cooperate) and -1 represents a full defection (both agents defect). The trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. (red) +/- standard deviation.}
 	\label{90_90_B}
 	%\vskip -6pt
 \end{figure}
@@ -493,7 +493,7 @@ In our simulations, at the beginning (from $t=0$ up to $t=300$) both agents are 
 		$\hat R_{2:1}$ & 0.58 &-0.064 & \cellcolor{yellow!30}0.99& -0.66\\ \hline
 		$\sigma^2$ &  0.034 & 0.095 & \cellcolor{yellow!30}8.5e-4  & 0.034\\ \hline
 	\end{tabular}
-	\caption{\textcolor{red}{$\alpha=0$, $\beta = 0.9$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. We can see that with a small variance agents successfully learned that the other has negative reward $\mathcal{S}$, but as the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that is, in fact, null (see yellow cells)}
+	\caption{\textcolor{red}{$\alpha=0$, $\beta = 0.9$}. (blue) Average learned other's reward function by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. We can see that with small variances agents successfully learned that the other has negative reward $\mathcal{S}$, but since the other was always defecting at the end, both thought that the other had strong positive reward $\mathcal{P}$ that was, in fact, null (see yellow cells).}
 	\label{R_09_09_B}
 \end{table}
 
@@ -501,7 +501,7 @@ In our simulations, at the beginning (from $t=0$ up to $t=300$) both agents are 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{09_09_B}
-	\caption{\textcolor{red}{$\alpha=0$, $\beta=0.9$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior.}
+	\caption{\textcolor{red}{$\alpha=0$, $\beta=0.9$}. (blue) Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represents a full cooperation (both agents cooperate) and -1 represents a full defection (both agents defect). The trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. (red) +/- standard deviation.}
 	\label{09_09_B}
 	%\vskip -6pt
 \end{figure}
@@ -518,14 +518,14 @@ In our simulations, at the beginning (from $t=0$ up to $t=300$) both agents are 
 		$\hat R_{2:1}$ &\cellcolor{yellow!30}0.55 & \cellcolor{yellow!30}1.    &     -0.933 &-0.77\\ \hline
 		$\sigma^2$ &  \cellcolor{yellow!30}7.7e-02 &  \cellcolor{yellow!30}1.9e-17  & 2.2e-02  & 7.4e-02\\ \hline
 	\end{tabular}
-	\caption{\textcolor{red}{$\alpha=0.9$, $\beta = 0.3$}. Average learned other's rewards functions by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. Agents could learn each other's intentions and understood that $\mathcal{T}$ and $\mathcal{R}$ are positive rewards for the other. As they finally always cooperated (because of empathy), they estimated other's rewards higher for $\mathcal{R}$ than for $\mathcal{T}$(see yellow cells).}
+	\caption{\textcolor{red}{$\alpha=0.9$, $\beta = 0.3$}. Average learned other's reward function by agents 1 and 2 over 50 IPD games and variances. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. Agents could learn each other's intentions and understood that $\mathcal{T}$ and $\mathcal{R}$ are positive rewards for the other. As they finally always cooperated (because of empathy), they estimated other's rewards higher for $\mathcal{R}$ than for $\mathcal{T}$(see yellow cells).}
 	\label{R_99_99_B}
 \end{table}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{99_99_B}
-	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0.3$}. Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represent a full cooperation (both agents cooperate) and -1 represent a full defection (both agents defect). the trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior.}
+	\caption{\textcolor{red}{$\alpha=0.9$, $\beta=0.3$}. (blue) Average trajectory of defect-cooperate ratio over 50 IPD games and variances. +1 represents a full cooperation (both agents cooperate) and -1 represents a full defection (both agents defect). The trajectory is computed with an exponential moving average of this ratio. Between times $t=301$ and $t=700$ agents were following expressing-intention behavior. (red) +/- standard deviation.}
 	\label{99_99_B}
 	%\vskip -6pt
 \end{figure}
@@ -538,7 +538,7 @@ Regarding results of subsection~\ref{63} it appears that with expressing-intenti
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{alphamap}
-	\caption{Average final defect-cooperate ratio over 10 IDP games for a grid of 400 possible ($\alpha_1$, $\alpha_2$) combinations. In each game, agents were following expressing-intention behavior between time $t=301$ and $t=700$. Red areas correspond to combinations that led to cooperation while blue areas correspond to combinations that led to Nash equilibrium. In green areas, agents where equally defecting and cooperating.}
+	\caption{Average final defect-cooperate ratio over 10 IDP games for a grid of 400 possible ($\alpha_1$, $\alpha_2$) combinations. In each game, agents were adopting expressing-intention behavior between time $t=301$ and $t=700$. Red areas correspond to combinations that led to cooperation while blue areas correspond to combinations that led to Nash equilibrium. In green areas, agents were equally defecting and cooperating.}
 	\label{alphamap}
 	%\vskip -6pt
 \end{figure}
@@ -547,9 +547,9 @@ Regarding results of subsection~\ref{63} it appears that with expressing-intenti
 
 Cooperation in IPD game is said to be irrational. Regarding animals and humans behaviors, we can however observe quantities of such irrational behaviors emerging out of a stressful word, such as friendship or love. Models of natural selection brought global explanations of these emergences, but the detailed causes and mechanisms leading to such complex abilities in animals remain unknown. We strongly believe that any social behavior springs up in such conditions it was rational to behave that way. With this work, we claim that cooperation is no more irrational when agents can express and understand each others intentions. 
 
-We introduce a cognitive architecture enabling second order of theory of mind for social agents. This architecture is not recursive in the sens that each agent develop models for itself, others or itself perceived by others and none of these models enable theory of mind. Agents are modeled as RL-agents and use IRL to model others or themselves seen by others. In this framework, it is possible to design a decision making algorithm aiming to enable agents to express each others intentions. We add two intrinsic rewards based on empathy and gratitude, empathy being the ability to feel others rewards while gratitude is to feel how others would estimate agents own rewards. Through an 2-agents system based on IPD game, we show that when agents can express their intentions, the intrinsic reward for empathy is a necessary and sufficient condition to promote cooperation, while gratitude added to empathy seems to speed up and stabilize this cooperation. 
+We introduce a cognitive architecture enabling second order of theory of mind for social agents. This architecture is not recursive in the sens that each agent develop models for itself, others or itself perceived by others and none of these models enable theory of mind. Agents are modeled as RL-agents and use IRL to model others or themselves seen by others. In this framework, it is possible to design a decision making algorithm aiming to enable agents to express each others intentions. We add two intrinsic rewards based on empathy and gratitude, empathy being the ability to feel others rewards while gratitude is the ability to to feel how others would estimate its own rewards. Through an 2-agents system based on IPD game, we show that when agents can express their intentions, the intrinsic reward for empathy is a necessary and sufficient condition to promote cooperation, while gratitude added to empathy seems to speed up and to stabilize this cooperation. 
 
-We make the assumption that our algorithm used to express intentions could also work with humans and hence improve Human-Robot interactions, especially in cooperative tasks. We finally invite readers of this work to explore the huge area of possibilities opened by this framework, by trying different learning approaches, intrinsic rewards and multi-agent scenarios. 
+We make the assumption that the behavior used to express intentions could also be understood by humans and hence improve Human-Robot interactions, especially in cooperative tasks. We finally invite readers of this paper to explore the huge area of possibilities opened by this framework, by trying different learning approaches, intrinsic rewards or multi-agent scenarios. 
 
 
 \bibliographystyle{abbrv}

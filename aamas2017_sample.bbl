@@ -110,6 +110,13 @@ P.~Sequeira, F.~S. Melo, and A.~Paiva.
 \newblock The influence of social display in competitive multiagent learning.
 \newblock pages 64--69, 2014.
 
+\bibitem{singh2010intrinsically}
+S.~Singh, R.~L. Lewis, A.~G. Barto, and J.~Sorg.
+\newblock Intrinsically motivated reinforcement learning: An evolutionary
+  perspective.
+\newblock {\em IEEE Transactions on Autonomous Mental Development},
+  2(2):70--82, 2010.
+
 \bibitem{watkins1992q}
 C.~J. Watkins and P.~Dayan.
 \newblock Q-learning.
