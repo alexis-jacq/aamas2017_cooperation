@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  16 NOV 2016 01:26
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.11.11)  16 NOV 2016 11:11
  restricted \write18 enabled.
 **aamas2017_sample.tex
 (./aamas2017_sample.tex
@@ -394,6 +394,12 @@ Overfull \hbox (2.24345pt too wide) in paragraph at lines 236--237
  []
 
 
+Overfull \hbox (15.97267pt too wide) in paragraph at lines 258--259
+\T1/aer/m/n/9 der of mod-el-ing. In con-trast with pre-vi-ous ap-proaches [13][
+6][17],
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -450,6 +456,9 @@ Package pdftex.def Info: 00_00_Q-eps-converted-to.pdf used on input line 428.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 Package epstopdf Info: Source file: <90_90_Q.eps>
 (epstopdf)                    date: 2016-11-15 22:15:23
 (epstopdf)                    size: 39885 bytes
@@ -466,7 +475,13 @@ File: 90_90_Q-eps-converted-to.pdf Graphic file (type pdf)
 <use 90_90_Q-eps-converted-to.pdf>
 Package pdftex.def Info: 90_90_Q-eps-converted-to.pdf used on input line 454.
 (pdftex.def)             Requested size: 215.99854pt x 165.9203pt.
- [4<./00_00_Q-eps-converted-to.pdf>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 Package epstopdf Info: Source file: <m9_m3_Q.eps>
 (epstopdf)                    date: 2016-11-15 22:11:14
 (epstopdf)                    size: 66675 bytes
@@ -477,8 +492,7 @@ Package epstopdf Info: Source file: <m9_m3_Q.eps>
 f m9_m3_Q.eps>
 (epstopdf)             \includegraphics on input line 479.
 Package epstopdf Info: Output file is already uptodate.
-
-<m9_m3_Q-eps-converted-to.pdf, id=51, 578.16pt x 440.64626pt>
+<m9_m3_Q-eps-converted-to.pdf, id=33, 578.16pt x 440.64626pt>
 File: m9_m3_Q-eps-converted-to.pdf Graphic file (type pdf)
 
 <use m9_m3_Q-eps-converted-to.pdf>
@@ -493,6 +507,7 @@ Overfull \hbox (8.00198pt too wide) in paragraph at lines 486--486
 [][]\secfnt Ex-press-ing in-ten-tions with em-pa-thy & grat-
  []
 
+[4<./00_00_Q-eps-converted-to.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -602,7 +617,7 @@ Here is how much of LuaTeX's memory you used:
  100000,154059 words of node,token memory allocated
  534 words of node memory still in use:
    6 hlist, 2 vlist, 3 rule, 2 glue, 1 kern, 64 glue_spec, 1 write nodes
-   avail lists: 2:24,3:256,4:2772,5:660,6:6133,7:393,9:601,10:557
+   avail lists: 2:24,3:256,4:3013,5:660,6:6213,7:450,9:601,10:574
  8049 multiletter control sequences out of 65536+600000
  106 fonts using 4173835 bytes
  41i,21n,35p,1630b,2002s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -624,7 +639,7 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><</usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvb8a.pfb><</usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb><</usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb><</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on aamas2017_sample.pdf (8 pages, 366734 bytes).
+Output written on aamas2017_sample.pdf (8 pages, 366730 bytes).
 
 PDF statistics: 215 PDF objects out of 1000 (max. 8388607)
  143 compressed objects within 2 object streams
