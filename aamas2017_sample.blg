@@ -5,45 +5,46 @@ The style file: abbrv.bst
 Database file #1: biblio.bib
 Warning--empty journal in puterman1994
 Warning--empty booktitle in sequeira14
-You've used 22 entries,
+Warning--can't use both volume and number fields in sutton1998reinforcement
+You've used 24 entries,
             2118 wiz_defined-function locations,
-            634 strings with 7524 characters,
-and the built_in function-call counts, 8410 in all, are:
-= -- 861
-> -- 332
-< -- 11
-+ -- 133
-- -- 108
-* -- 555
-:= -- 1307
-add.period$ -- 68
-call.type$ -- 22
-change.case$ -- 118
+            643 strings with 7770 characters,
+and the built_in function-call counts, 8961 in all, are:
+= -- 908
+> -- 363
+< -- 12
++ -- 146
+- -- 118
+* -- 590
+:= -- 1402
+add.period$ -- 74
+call.type$ -- 24
+change.case$ -- 127
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 349
-empty$ -- 681
-format.name$ -- 108
-if$ -- 1825
+cite$ -- 27
+duplicate$ -- 373
+empty$ -- 725
+format.name$ -- 118
+if$ -- 1938
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 23
-newline$ -- 113
-num.names$ -- 44
-pop$ -- 131
+int.to.str$ -- 24
+missing$ -- 27
+newline$ -- 123
+num.names$ -- 48
+pop$ -- 148
 preamble$ -- 1
-purify$ -- 97
+purify$ -- 106
 quote$ -- 0
-skip$ -- 276
+skip$ -- 290
 stack$ -- 0
-substring$ -- 633
-swap$ -- 112
-text.length$ -- 11
+substring$ -- 644
+swap$ -- 116
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 86
-warning$ -- 2
-while$ -- 91
-width$ -- 24
-write$ -- 242
-(There were 2 warnings)
+type$ -- 90
+warning$ -- 3
+while$ -- 95
+width$ -- 26
+write$ -- 263
+(There were 3 warnings)
